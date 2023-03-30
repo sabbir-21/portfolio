@@ -1,143 +1,291 @@
-/* iPads (portrait and landscape) ----------- */
-@media (max-width: 768px) {
-	body{ overflow-x: hidden;}
-    .navbar-header {
-        float: none;
-    }
-    .navbar-toggle {
-        display: block;
-    }
-    .navbar-collapse {
-        border-top: 1px solid transparent;
-        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
-    }
-    .navbar-collapse.collapse {
-        display: none !important;
-    }
-    .navbar-fixed-top .navbar-collapse, 
-    .navbar-fixed-bottom .navbar-collapse {
-	  max-height: 420px;
-	  text-align: center;
+@media all and (min-width: 993px) and (max-width: 1200px) {
+#slider-video {
+    position: relative;
 	}
-	.gray-bg .vline {
-	    left: 11%;
-	}
-	.navbar-right {
-	    float: none !important;
-	    margin-right: -15px;
-	}
-    .navbar-nav {
-        float: center !important;
-        margin: 7.5px -15px;
-    }
-    .navbar-nav>li {
-        float: none;
-    }
-    .navbar-nav>li>a {
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-    .navbar-text {
-        float: none;
-        margin: 15px 0;
-    }
-    .navbar-collapse.collapse.in {display: block!important;}
-    .collapsing {overflow: hidden!important; }
-    .navbar-nav {margin: 0 -15px;}
-    .navbar-nav .open .dropdown-menu > li > a, .navbar-nav .open .dropdown-menu .dropdown-header {
-        padding: 10px 15px 10px 25px;
-    }
-    .price.panel-default {
-	    margin: 40px;
-	}
-	.price.featured.panel-default {
-	    margin: 40px;
-	}
-	.content-heading{ margin-top: 80px;}
-	.ipad-wrapper .app-wrap {left: 22%;}
-	#home.app .content-heading.text-left{text-align: center;}
-	#itemsWorkTwo .box .hover-text i.fa {
-	    top: 0%;
-	}
+.slider-wrap{
+position:relative;
 }
-@media (max-width: 768px) {
-	#home.slider .content-heading {
-    	margin-top: 30px;
-	}
-	#home.slider h1 {
-	    color: #FC3;
-	    font-size: 28px;
-	}
-	.slider .content-heading p.lead { margin-bottom: 20px; }
-	.slider .carousel-indicators { bottom: 30px; }
+.carousel-caption h2{
+font-size:67px;
 }
-@media (max-width: 603px) { 
-	.slider a.goto-btn { display: none;}
-	.ipad-wrapper .app-wrap {left: 16%;}
-	#footer .pull-left,
-    #footer .pull-right {
-	    float: none !important;
-	    text-align: center;
-	}
+.ab-sec-img img{
+width:100%;
+position:absolute;
+top:22px;
 }
+.team-desc ul.team-social-icon li {
+    padding-right: 10px;
 
-@media (max-width: 460px) {
-	.gray-bg .vline {
-	    left: 15%;
-	}
-	.meta-detail { display: none; }
-    h1 { font-size: 34px;}
-    #home.slider h1 { font-size: 26px;}
-    p.lead { display: none;}
-    .slider .carousel-indicators { bottom: 0px; }
-    .ipad-wrapper .app-wrap {left: 3%;}
 }
-@media (max-width: 360px) { 
-	#services,
-	#pricing,
-	.section-header,
-	.about-right-content,
-	#features, 
-	#feature,
-	#works,
-	#blog,
-	#contact {
-	  padding: 20px 0;
-	}
-	p{ font-size: 12px}
-	h2{ font-size: 20px;}
-	h4{ line-height: 20px;}
-	ul.list-inline.cat > li{  margin-bottom: 20px;}
-	.gray-bg .vline { left: 20%;}
-	.post-meta {min-height: 50px;}
-	.price.panel-default {
-	    margin: 20px;
-	}
-	.price.featured.panel-default {
-	    margin: 20px;
-	}
-	h1 {font-size: 26px}
-	#home.slider{ display: none;}
-	#intro.slider{ margin-top: 70px !important}
-	.ipad-wrapper .app-wrap {display: none;}
-	a.goto-btn {
-	    margin-right: auto;
-	    margin: 0 10px;
-	}
-	a.goto-btn {
-	    display: inline-block;
-	}
-	.blog .post-meta {min-height: 55px;}
+.team-desc p{
+text-align:justify;
 }
-@media (max-width: 320px) { 
-	.post-wrap .post .media-body p {display: none;}
-	.gray-bg .vline { left: 25%;}
-	.nav.nav-pills > li > a { font-size: 11px;}
-	ul.features li span.fa {
-	    font-size: 30px;
-	    margin-top: 2px;
+.mobilenav li {
+    padding: 6px;
 	}
-	.post-tab .nav-tabs > li > a {
-	    padding: 5px 10px;
+	.slide-sec-1 {
+    text-align: right;
+}
+.slide-sec-2 {
+    text-align: left;
+    padding: 0;
+}
+}
+@media all and (min-width: 767px) and (max-width: 992px) {
+#slider-video {
+    position: relative;
 	}
+.slider-wrap{
+position:relative;
+}
+.carousel-caption h2{
+font-size:67px;
+}
+#menu .nav {
+    left: 5%;
+    float: none;
+	top:5px;
+}
+.nav > li > a {
+    padding: 10px 10px;
+
+}
+.tab-img {
+    top: 0;
+	}
+.team-main-sec{
+margin-top:30px;
+}
+.blog-sec {
+margin-top:30px;
+}
+.hero-section {
+    padding: 18% 0% 0% 0%;
+}
+.hero-content h1{
+font-size:42px;
+}
+.slider-content h1 {
+    font-size: 40px;
+    line-height: 55px;
+}
+.mobilenav li {
+    padding: 6px;
+	}
+		.slide-sec-1 {
+    text-align: right;
+}
+.slide-sec-2 {
+    text-align: left;
+    padding: 0;
+}
+.parallex-content h1 {
+    font-size: 45px;
+	}
+.parallex-content {
+    top: 25%;
+}
+}
+@media all and (min-width: 480px) and (max-width: 768px) {
+#slider-video {
+    position: relative;
+	}
+.slider-wrap{
+position:relative;
+}
+.carousel-caption h2{
+font-size:45px;
+}
+.carousel-caption p {
+    font-size: 15px;
+    line-height: 25px;
+	}
+	.ab-sec-img img{
+width:100%;
+}
+a.btn-down {
+    top: 65px;
+	}
+	.navbar-nav > li > a {
+    padding-top: 0px;
+	}
+#menu .nav {
+ left:0%;
+ float:left;
+}
+.navbar-default .navbar-toggle {
+border:1px solid #999;
+}
+.navbar-default .navbar-toggle .icon-bar {
+background:#999;
+}
+.navbar-default .navbar-toggle:hover .icon-bar, .navbar-default .navbar-toggle:focus .icon-bar {
+background:#FFFFFF;
+ transition:all 0.5s;
+ -moz-transition: all 0.5s;
+ -o-transition: all 0.5s;
+ -webkit-transition: all 0.5s;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+background:#e73131;
+ transition:all 0.5s;
+ -moz-transition: all 0.5s;
+ -o-transition: all 0.5s;
+ -webkit-transition: all 0.5s;
+}
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+ border:rgba(248, 248, 248, 0);
+ box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0);
+}
+ul.navbar-nav {
+float:left;
+overflow:hidden;
+}
+ul.navbar-nav {
+ position: relative;
+ top:0;
+}
+.navbar-nav > li > a {
+    line-height: 17px;
+	}
+.navbar-collapse.in{
+overflow:hidden;
+}
+.tab-img {
+    top: 0;
+	}
+	.team-main-sec{
+margin-top:30px;
+}
+.blog-sec {
+margin-top:30px;
+}
+#footer-down ul li {
+    margin-right: 10px;
+}
+.hero-section {
+    padding: 18% 0% 0% 0%;
+}
+.hero-content h1{
+font-size:26px;
+}
+.hero-text{
+padding-bottom:5%;
+}
+a.btn-learn{
+top:10px;
+}
+.slider-content h1 {
+    font-size: 36px;
+    line-height: 55px;
+}
+.mobilenav li {
+    padding: 6px;
+	}
+		.slide-sec-1 {
+    text-align: right;
+}
+.slide-sec-2 {
+    text-align: left;
+    padding: 0;
+}
+.parallex-content h1 {
+    font-size: 32px;
+	}
+.parallex-content {
+    top: 20%;
+}
+}
+@media all and (min-width: 299px) and (max-width: 479px) {
+#slider-video {
+    position: relative;
+	}
+	.slider-wrap{
+position:relative;
+}
+.carousel-caption h2{
+font-size:45px;
+}
+.carousel-caption p {
+    font-size: 15px;
+    line-height: 25px;
+	}
+	.ab-sec-img img{
+width:100%;
+}
+a.btn-down {
+    top: 65px;
+	}
+#menu .nav {
+ left:0%;
+ float:left;
+}
+.navbar-default .navbar-toggle {
+border:1px solid #999;
+}
+.navbar-default .navbar-toggle .icon-bar {
+background:#999;
+}
+.navbar-default .navbar-toggle:hover .icon-bar, .navbar-default .navbar-toggle:focus .icon-bar {
+background:#FFFFFF;
+ transition:all 0.5s;
+ -moz-transition: all 0.5s;
+ -o-transition: all 0.5s;
+ -webkit-transition: all 0.5s;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+background:#e73131;
+ transition:all 0.5s;
+ -moz-transition: all 0.5s;
+ -o-transition: all 0.5s;
+ -webkit-transition: all 0.5s;
+}
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+ border:rgba(248, 248, 248, 0);
+ box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0);
+}
+ul.navbar-nav {
+float:left;
+overflow:hidden;
+}
+ul.navbar-nav {
+ position: relative;
+ top:0;
+}
+.navbar-nav > li > a {
+    line-height: 17px;
+	}
+.navbar-collapse.in{
+overflow:hidden;
+}
+.tab-img {
+    top: 0;
+	}
+	.team-main-sec{
+margin-top:30px;
+}
+.slider-content h1 {
+    font-size: 36px;
+    line-height: 55px;
+}
+.slider-content h2 {
+    font-size: 21px;
+    padding: 10px 0px 10px 0px;
+}
+.blog-sec {
+margin-top:30px;
+}
+.mobilenav li {
+    padding: 6px;
+	}
+.slide-sec-1 {
+    text-align: right;
+}
+.slide-sec-2 {
+    text-align: left;
+    padding: 0;
+}
+#footer-down ul li {
+    margin-right: 10px;
+}
 }
