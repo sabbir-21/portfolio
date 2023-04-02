@@ -637,7 +637,19 @@
 </footer>
 <!--Jquery-->
 <script type="text/javascript" src="js/jquery.min.js"></script>
+
+<script type="text/javascript">
+  $('.navbar-nav>li>a').on('click', function(){
+    $('.navbar-collapse').collapse('hide');
+});
+  $(function() {
+  $(document).click(function (event) {
+    $('.navbar-collapse').collapse('hide');
+  });
+});
+</script>
 <!--Boostrap-Jquery-->
+
 <script type="text/javascript" src="js/bootstrap.js"></script>
 <!--Preetyphoto-Jquery-->
 <script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
