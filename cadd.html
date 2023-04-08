@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CADD Process</title>
+	<meta name="author" content="Sabbir Ahmed">
+	<meta name="description" content="Computer Aided Drug Design tutorial by Sabbir Ahmed">
+	<meta name="keywords" content="portfolio, agency, mobile responsive, CADD, drug, drug discovery, drug design">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+		/* Style for the section heading */
+		.section-heading {
+			display: flex;
+			align-items: center;
+			cursor: pointer;
+		}
+		.section-heading .fa {
+    margin-right: 5px; /* adjust this value as needed */
+  }
+		.section-heading .heading-arrow {
+			margin-right: 25px;
+			transition: transform 0.2s ease-in-out;
+		}
+		.section-heading.collapsed .heading-arrow:before {
+			content: "\f107";
+		}
+		.section-heading.expanded .heading-arrow:before {
+			content: "\f106";
+		}
+		/* Style for the section content */
+		
+		.section-content.expanded {
+			display: block;
+		}
+		.section-heading{
+		font-size: 25px;
+		}
+		/* responsive*/
+		@media all and (min-width: 993px){
+		.section-content {
+			display: none;
+			margin-left: 50px;
+			margin-bottom: 10px;
+		}
+		}
+		@media all and (min-width: 768px) and (max-width: 993px) {
+		.section-content {
+			display: none;
+			margin-left: 40px;
+			margin-bottom: 10px;
+		}
+		}
+		@media all and (min-width: 480px) and (max-width: 768px) {
+		.section-content {
+			display: none;
+			margin-left: 30px;
+			margin-bottom: 10px;
+		}
+		}
+		@media all and (max-width: 480px) {
+		.section-content {
+			display: none;
+			margin-left: 20px;
+			margin-bottom: 10px;
+		}
+		}
+	</style>
+	<script>
+  function toggleSectionContent(button) {
+    const sectionContent = button.nextElementSibling;
+    sectionContent.classList.toggle('expanded');
+    button.classList.toggle('collapsed');
+    const icon = button.querySelector('.fa');
+    if (sectionContent.classList.contains('expanded')) {
+      icon.classList.remove('fa-angle-down');
+      icon.classList.add('fa-angle-up');
+    } else {
+      icon.classList.remove('fa-angle-up');
+      icon.classList.add('fa-angle-down');
+    }
+  }
+</script>
+</head>
+<body>
+	<section class="section_menu">
+      <div class="section-heading collapsed" onclick="toggleSectionContent(this)">
+        <i class="fa fa-angle-down"></i><span class="section-title">Softwares Needed</span>
+      </div>
+      <div class="section-content">
+		<table style="border-collapse: collapse; width: 100%;">
+		  <thead style="background-color: #f2f2f2;">
+			<tr>
+			  <th style="padding: 10px; text-align: left;">Name</th>
+			  <th style="padding: 10px; text-align: left;">Link</th>
+			</tr>
+		  </thead>
+		  <tbody>
+			<tr>
+			  <td style="border: 1px solid #ddd; padding: 10px;">1. PyRx</td>
+			  <td style="border: 1px solid #ddd; padding: 10px;"><a href="https://sourceforge.net/projects/pyrx/">https://sourceforge.net/projects/pyrx/</a></td>
+			</tr>
+			<tr>
+			  <td style="border: 1px solid #ddd; padding: 10px;">2. Swiss pdb Viewer</td>
+			  <td style="border: 1px solid #ddd; padding: 10px;"><a href="https://spdbv.unil.ch/disclaim.html#">https://spdbv.unil.ch/disclaim.html#</a></td>
+			</tr>
+			<tr>
+			  <td style="border: 1px solid #ddd; padding: 10px;">3. Discovery Studio Visualizer</td>
+			  <td style="border: 1px solid #ddd; padding: 10px;"><a href="https://discover.3ds.com/discovery-studio-visualizer-download">https://discover.3ds.com/discovery-studio-visualizer-download</a></td>
+			</tr>
+			<tr>
+			  <td style="border: 1px solid #ddd; padding: 10px;">4. Open Babel</td>
+			  <td style="border: 1px solid #ddd; padding: 10px;"><a href="https://sourceforge.net/projects/openbabel/">https://sourceforge.net/projects/openbabel/</a></td>
+			</tr>
+			<tr>
+			  <td style="border: 1px solid #ddd; padding: 10px;">5. Auto SDF Downloader</td>
+			  <td style="border: 1px solid #ddd; padding: 10px;"><a href="https://github.com/sabbir-21/SDF-Protein-CADD/releases/download/v1.2/final_app.exe">https://github.com/sabbir-21/SDF-Protein-CADD/releases/download/v1.2/final_app.exe</a></td>
+			</tr>
+			
+		  </tbody>
+		</table>
+      </div>
+	</section>
+	<section class="section_menu">
+		<div class="section-heading collapsed" onclick="toggleSectionContent(this)">
+			<i class="fa fa-angle-down"></i>A) Protein Preparation
+		</div>
+		<div class="section-content">
+			<p>You need to find a specific protein by literature review. Then Find the protein ID. Then follow either a) or b)</p>
+		<section class="section_submenu1">
+      <div class="section-heading collapsed" onclick="toggleSectionContent(this)">
+        <i class="fa fa-angle-down"></i><span class="section-title">a) Protein Model from Database</span>
+      </div>
+      <div class="section-content">
+        <p>if you know the protein name only, and if the PDB file is available in the Proetin data bank</p>
+			<section class="section_submenu2">
+      <div class="section-heading collapsed" onclick="toggleSectionContent(this)">
+        <i class="fa fa-angle-down"></i><span class="section-title">1. Download Protein</span>
+      </div>
+      <div class="section-content">
+        <p>You can download protein pdb file from one of the following websites.</p>
+				<section class="section_submenu3">
+      <div class="section-heading collapsed" onclick="toggleSectionContent(this)">
+        <i class="fa fa-angle-down"></i><span class="section-title">i) RCSB</span>
+      </div>
+      <div class="section-content">
+		<p>
+			<a href="https://www.rcsb.org/">https://www.rcsb.org/</a><br>
+			Procedure: go to the website > search the protein > click download files >  download PDB format<br>
+			Or, 
+		</p>
+      </div>
+				</section>
+				<section class="section_submenu3">
+      <div class="section-heading collapsed" onclick="toggleSectionContent(this)">
+        <i class="fa fa-angle-down"></i><span class="section-title">ii) Swiss Model</span>
+      </div>
+      <div class="section-content">
+		<p>
+			<a href="https://swissmodel.expasy.org/repository">https://swissmodel.expasy.org/repository</a><br>
+			Procedure: go to the website > search the protein > click download files >  download PDB format<br>
+			Or, 
+		</p>
+      </div>
+				</section>
+				<section class="section_submenu3">
+      <div class="section-heading collapsed" onclick="toggleSectionContent(this)">
+        <i class="fa fa-angle-down"></i><span class="section-title">iii) PDBE</span>
+      </div>
+      <div class="section-content">
+		<p>
+			<a href="https://www.ebi.ac.uk/pdbe/">https://www.ebi.ac.uk/pdbe/</a><br>
+			Procedure: go to the website > search the protein > click download files >  download PDB format<br>
+			Or, 
+		</p>
+      </div>
+				</section>
+				<section class="section_submenu3">
+      <div class="section-heading collapsed" onclick="toggleSectionContent(this)">
+        <i class="fa fa-angle-down"></i><span class="section-title">iv) wwpdb</span>
+      </div>
+      <div class="section-content">
+		<p>
+			<a href="https://www.wwpdb.org/">https://www.wwpdb.org/</a><br>
+			Procedure: go to the website > search the protein > click download files >  download PDB format<br>
+			Or, 
+		</p>
+      </div>
+				</section>
+      </div>
+			</section>
+			<section class="section_submenu2">
+      <div class="section-heading collapsed" onclick="toggleSectionContent(this)">
+        <i class="fa fa-angle-down"></i><span class="section-title">2. Minimize Protein</span>
+      </div>
+      <div class="section-content">
+        <p>After downloading the protein PDB file, you need to minimize the energy of the protein.</p>
+				<section class="section_submenu3">
+      <div class="section-heading collapsed" onclick="toggleSectionContent(this)">
+        <i class="fa fa-angle-down"></i><span class="section-title">i) Swiss PDB Viewer</span>
+      </div>
+      <div class="section-content">
+        <p>Procedure: open spdbviewer > click file > open the protein model PDB file > click select > click all > click tools > click energy minimisation > again click file > save > save current layer > file rename as energy minimized</p>
+      </div>
+				</section>
+				<section class="section_submenu3">
+      <div class="section-heading collapsed" onclick="toggleSectionContent(this)">
+        <i class="fa fa-angle-down"></i><span class="section-title">ii) Discovery Studio</span>
+      </div>
+      <div class="section-content">
+        <p>Procedure: Open Discovery studio > open PDB file >  click scripts > Publication quality > click selection > remove water groups, Hetatm groups, Ligand groups > save as energy minimized PDB file </p>
+      </div>
+				</section>
+      </div>
+			</section>
+      </div>
+		</section>
+		<section class="section_submenu1">
+      <div class="section-heading collapsed" onclick="toggleSectionContent(this)">
+        <i class="fa fa-angle-down"></i><span class="section-title">b) Homology Modeling</span>
+      </div>
+      <div class="section-content">
+        <p>If you know the protein name but protein pdb file is not available in the database then follow the steps bellow.</p>
+			<section class="section_submenu2">
+      <div class="section-heading collapsed" onclick="toggleSectionContent(this)">
+        <i class="fa fa-angle-down"></i><span class="section-title">1. FASTA code</span>
+      </div>
+      <div class="section-content">
+        <p>Search Gene in NCBI and Take Fasta Code</p>
+				<section class="section_submenu3">
+      <div class="section-heading collapsed" onclick="toggleSectionContent(this)">
+        <i class="fa fa-angle-down"></i><span class="section-title">i) NCBI</span>
+      </div>
+      <div class="section-content">
+        <p>
+		<a href="https://www.ncbi.nlm.nih.gov/">https://www.ncbi.nlm.nih.gov/</a><br>
+		Procedure: Go to the website > select Protein database > search gene > click specific organism > click on the first result > click fasta > copy fasta Code</p>
+      </div>
+				</section>
+      </div>
+			</section>
+			<section class="section_submenu2">
+      <div class="section-heading collapsed" onclick="toggleSectionContent(this)">
+        <i class="fa fa-angle-down"></i><span class="section-title">2. Model Build</span>
+      </div>
+      <div class="section-content">
+        <p>Build a model using the FASTA code you get.</p>
+				<section class="section_submenu3">
+      <div class="section-heading collapsed" onclick="toggleSectionContent(this)">
+        <i class="fa fa-angle-down"></i><span class="section-title">i) Swiss Modeling</span>
+      </div>
+      <div class="section-content">
+        <p>
+		<a href="https://swissmodel.expasy.org/interactive">https://swissmodel.expasy.org/interactive</a><br>
+		Procedure: Go to the website > paste the fasta code >  Click Build Model > Download the protein model PDB file
+		</p>
+      </div>
+				</section>
+      </div>
+			</section>
+			<section class="section_submenu2">
+      <div class="section-heading collapsed" onclick="toggleSectionContent(this)">
+        <i class="fa fa-angle-down"></i><span class="section-title">3. Model Validation</span>
+      </div>
+      <div class="section-content">
+        <p>
+		<a href="https://saves.mbi.ucla.edu/ ">https://saves.mbi.ucla.edu/ </a><br>
+		Procedure: go to the website > open the downloaded PDB model > </p>
+      </div>
+			</section>
+			<section class="section_submenu2">
+      <div class="section-heading collapsed" onclick="toggleSectionContent(this)">
+        <i class="fa fa-angle-down"></i><span class="section-title">4. Minimize Protein</span>
+      </div>
+      <div class="section-content">
+        <p>After downloading the protein PDB file, you need to minimize the energy of the protein.</p>
+				<section class="section_submenu3">
+      <div class="section-heading collapsed" onclick="toggleSectionContent(this)">
+        <i class="fa fa-angle-down"></i><span class="section-title">i) Swiss PDB Viewer</span>
+      </div>
+      <div class="section-content">
+        <p>Procedure: open spdbviewer > click file > open the protein model PDB file > click select > click all > click tools > click energy minimisation > again click file > save > save current layer > file rename as energy minimized</p>
+      </div>
+				</section>
+				<section class="section_submenu3">
+      <div class="section-heading collapsed" onclick="toggleSectionContent(this)">
+        <i class="fa fa-angle-down"></i><span class="section-title">ii) Discovery Studio</span>
+      </div>
+      <div class="section-content">
+        <p>Procedure: Open Discovery studio > open PDB file >  click scripts > Publication quality > click selection > remove water groups, Hetatm groups, Ligand groups > save as energy minimized PDB file </p>
+      </div>
+				</section>
+      </div>
+			</section>
+      </div>
+		</section>
+		</div>
+	</section>
+	<section class="section_menu">
+		<div class="section-heading collapsed" onclick="toggleSectionContent(this)">
+			<i class="fa fa-angle-down"></i>B) Drug Preparation
+		</div>
+		<div class="section-content">
+			<p>You need to find a control drug by literature review. Then you have to search similar drugs or chemicals of it. Follow the steps bellow:</p>
+			<section class="section_submenu1">
+      <div class="section-heading collapsed" onclick="toggleSectionContent(this)">
+        <i class="fa fa-angle-down"></i><span class="section-title">a) Drug Similarity Searching</span>
+      </div>
+      <div class="section-content">
+        <p>Use any website given bellow. You can use multiple website for better similarities search. I used PubChem+Ambinter+Swiss Similarity. And for all chemical compounds in a specific plants, I use IMPPAT </p>
+			<section class="section_submenu2">
+      <div class="section-heading collapsed" onclick="toggleSectionContent(this)">
+        <i class="fa fa-angle-down"></i><span class="section-title">1. Pubchem</span>
+      </div>
+      <div class="section-content">
+        <p>
+		<a href="https://pubchem.ncbi.nlm.nih.gov/">https://pubchem.ncbi.nlm.nih.gov/</a><br>
+		Procedure: go to the website > search Control drug > download control drug 3D conformer sdf file > sdf file open with Notepad > copy the total sequence from notepad</p>
+      </div>
+			</section>
+			<section class="section_submenu2">
+      <div class="section-heading collapsed" onclick="toggleSectionContent(this)">
+        <i class="fa fa-angle-down"></i><span class="section-title">2. Ambinter</span>
+      </div>
+      <div class="section-content">
+        <p>
+		<a href="https://www.ambinter.com/#search">https://www.ambinter.com/#search</a><br>
+		Procedure: go to the website > Paste the notepad sequence > different results showed > collect different smiles id</p>
+      </div>
+			</section>
+			<section class="section_submenu2">
+      <div class="section-heading collapsed" onclick="toggleSectionContent(this)">
+        <i class="fa fa-angle-down"></i><span class="section-title">3. Swiss Similarity</span>
+      </div>
+      <div class="section-content">
+        <p>
+		<a href="http://www.swisssimilarity.ch/">http://www.swisssimilarity.ch/</a><br>
+		Procedure: go to the website >  paste control drug smiles id >  select a class of compound (Drugs) >  choose DrugBank > choose different Pathway > submit > download CSV file >  collect smiles id which has more than 0.70 similarities.
+Then, choose ChEMBL-approved drugs > choose a different Pathway > submit > download CSV file >  collect smiles id with more than 0.70 similarities.
+Then, ChEMBL drug candidates in clinics >  choose a different Pathway > submit > download CSV file >  collect smiles id with more than 0.70 similarities.<br> To download all chemical by one click, I developed a software. <a href="https://github.com/sabbir-21/SDF-Protein-CADD">Try it</a>
+</p>
+      </div>
+			</section>
+			<section class="section_submenu2">
+      <div class="section-heading collapsed" onclick="toggleSectionContent(this)">
+        <i class="fa fa-angle-down"></i><span class="section-title">4. ChemBl</span>
+      </div>
+      <div class="section-content">
+        <p>
+		<a href="https://www.ebi.ac.uk/chembl/">https://www.ebi.ac.uk/chembl/</a><br>
+		</p>
+      </div>
+			</section>
+			<section class="section_submenu2">
+      <div class="section-heading collapsed" onclick="toggleSectionContent(this)">
+        <i class="fa fa-angle-down"></i><span class="section-title">5. Drugbank</span>
+      </div>
+      <div class="section-content">
+        <p>
+		<a href="https://go.drugbank.com/">https://go.drugbank.com/</a><br>
+		</p>
+      </div>
+			</section>
+			<section class="section_submenu2">
+      <div class="section-heading collapsed" onclick="toggleSectionContent(this)">
+        <i class="fa fa-angle-down"></i><span class="section-title">6. HMDB</span>
+      </div>
+      <div class="section-content">
+        <p>
+		<a href="https://hmdb.ca/">https://hmdb.ca/</a><br>
+		</p>
+      </div>
+			</section>
+			<section class="section_submenu2">
+      <div class="section-heading collapsed" onclick="toggleSectionContent(this)">
+        <i class="fa fa-angle-down"></i><span class="section-title">7. FOODB</span>
+      </div>
+      <div class="section-content">
+        <p>
+		<a href="https://foodb.ca/">https://foodb.ca/</a><br>
+		</p>
+      </div>
+			</section>
+			<section class="section_submenu2">
+      <div class="section-heading collapsed" onclick="toggleSectionContent(this)">
+        <i class="fa fa-angle-down"></i><span class="section-title">8. CTDbase</span>
+      </div>
+      <div class="section-content">
+        <p>
+		<a href="https://ctdbase.org/">https://ctdbase.org/</a><br>
+		</p>
+      </div>
+			</section>
+			<section class="section_submenu2">
+      <div class="section-heading collapsed" onclick="toggleSectionContent(this)">
+        <i class="fa fa-angle-down"></i><span class="section-title">9. Cactus</span>
+      </div>
+      <div class="section-content">
+        <p>
+		<a href="https://cactus.nci.nih.gov/translate/">https://cactus.nci.nih.gov/translate/</a><br>
+		Procedure: click the link > paste the smiles id as an input format > save unique smiles output format as PDB, Aromatic, 3D > click translate > download the PDB file > rename the file as pubchem id</p>
+      </div>
+			</section>
+			<section class="section_submenu2">
+      <div class="section-heading collapsed" onclick="toggleSectionContent(this)">
+        <i class="fa fa-angle-down"></i><span class="section-title">10. IMPPAT</span>
+      </div>
+      <div class="section-content">
+        <p>
+		<a href="https://cb.imsc.res.in/imppat/">https://cb.imsc.res.in/imppat/</a><br>
+		<br> To download all chemical by one click, I developed a software. <a href="https://github.com/sabbir-21/SDF-Protein-CADD">Try it</a></p>
+      </div>
+			</section>
+			
+			
+      </div>
+			</section>
+			<section class="section_submenu1">
+      <div class="section-heading collapsed" onclick="toggleSectionContent(this)">
+        <i class="fa fa-angle-down"></i><span class="section-title">b) Combine Drugs</span>
+      </div>
+      <div class="section-content">
+        <p>You have to combine or merge all drugs in a one file. Use OpenBabel to do this.</p>
+				<section class="section_submenu2">
+      <div class="section-heading collapsed" onclick="toggleSectionContent(this)">
+        <i class="fa fa-angle-down"></i><span class="section-title">1. Open Babel</span>
+      </div>
+      <div class="section-content">
+        <p>Procedure: Open OpenBabel > choose “sdf - MDL MOL format” as an input format > choose “sdf - MDL MOL format” as an output format > choose output file location > Input all sdf file > click convert</p>
+      </div>
+				</section>
+      </div>
+			</section>
+		</div>
+	</section>
+	<section class="section_menu">
+		<div class="section-heading collapsed" onclick="toggleSectionContent(this)">
+			<i class="fa fa-angle-down"></i>C) Molecular Docking
+		</div>
+		<div class="section-content">
+			<p>You can use one of the following software. But we will use PyRx for easy use.</p>
+			<section class="section_submenu1">
+		<div class="section-heading collapsed" onclick="toggleSectionContent(this)">
+			<i class="fa fa-angle-down"></i>a) PyRx
+		</div>
+		<div class="section-content">
+			<p>You have to do next three steps.</p>
+				<section class="section_submenu1">
+			<div class="section-heading collapsed" onclick="toggleSectionContent(this)">
+				<i class="fa fa-angle-down"></i>1. Protein Input
+			</div>
+			<div class="section-content">
+				<p>Procedure: File > Load Molecule > right click molecule > AutoDock > Make Macromolecule</p>
+			</div>
+				</section>
+				<section class="section_submenu1">
+			<div class="section-heading collapsed" onclick="toggleSectionContent(this)">
+				<i class="fa fa-angle-down"></i>2. Drugs Input
+			</div>
+			<div class="section-content">
+				<p>Procedure: File > Load Molecule > right click molecule > AutoDock > Make Micro molecule<br>
+				Or, Below the PyRx, you’ll see Controls (Vina Wizard, Autodock Wizard, OpenBabel etc)
+Procedure: Click OpenBabel > Click insert a new item (On bottom right corner) > Select All ligands merged by Openbabel [see step in B>b>1] > Right click of any row > Minimize All > Again right click > Convert All to Autodock Ligand (pdbqt)
+</p>
+			</div>
+				</section>
+				<section class="section_submenu1">
+			<div class="section-heading collapsed" onclick="toggleSectionContent(this)">
+				<i class="fa fa-angle-down"></i>3. Start Docking
+			</div>
+			<div class="section-content">
+				<p>Procedure: Go to Vina Wizard > Start > Select All ligands(pdbqt) [shortcut for select all: Click first one, then Shift+Last one All will be selected] > select Macromolecules > click Forward > Click on maximize > Forward > Docking will start > after finishing of docking > Save results as CSV file from bottom right corner > Also export file from top menu bar (as .tar.gz)</p>
+			</div>
+				</section>
+		</div>
+			</section>
+			<section class="section_submenu1">
+		<div class="section-heading collapsed" onclick="toggleSectionContent(this)">
+			<i class="fa fa-angle-down"></i>b) Autodock Vina
+		</div>
+		<div class="section-content">
+			<p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+		</div>
+			</section>
+		</div>
+	</section>
+	
+</body>
+</html>
