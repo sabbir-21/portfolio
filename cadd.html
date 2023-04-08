@@ -8,6 +8,7 @@
 	<meta name="description" content="Computer Aided Drug Design tutorial by Sabbir Ahmed">
 	<meta name="keywords" content="portfolio, agency, mobile responsive, CADD, drug, drug discovery, drug design">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<base target="_blank">
 	<style>
 		/* Style for the section heading */
 		.section-heading {
@@ -460,8 +461,8 @@ Then, ChEMBL drug candidates in clinics >  choose a different Pathway > submit >
 			<div class="section-content">
 				<p>Procedure: File > Load Molecule > right click molecule > AutoDock > Make Micro molecule<br>
 				Or, Below the PyRx, you’ll see Controls (Vina Wizard, Autodock Wizard, OpenBabel etc)
-Procedure: Click OpenBabel > Click insert a new item (On bottom right corner) > Select All ligands merged by Openbabel [see step in B>b>1] > Right click of any row > Minimize All > Again right click > Convert All to Autodock Ligand (pdbqt)
-</p>
+				Procedure: Click OpenBabel > Click insert a new item (On bottom right corner) > Select All ligands merged by Openbabel [see step in B>b>1] > Right click of any row > Minimize All > Again right click > Convert All to Autodock Ligand (pdbqt)
+				</p>
 			</div>
 				</section>
 				<section class="section_submenu1">
@@ -482,6 +483,86 @@ Procedure: Click OpenBabel > Click insert a new item (On bottom right corner) > 
 			<p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
 		</div>
 			</section>
+		</div>
+	</section>
+	<section class="section_menu">
+		<div class="section-heading collapsed" onclick="toggleSectionContent(this)">
+			<i class="fa fa-angle-down"></i>D) ADMET Analysis
+		</div>
+		<div class="section-content">
+			<p>You need ADMET data analysis of the chemical that scores best in the docking. Use both website bellow to analysis</p>
+			<section class="section_submenu1">
+		<div class="section-heading collapsed" onclick="toggleSectionContent(this)">
+			<i class="fa fa-angle-down"></i>a) Swiss ADMET
+		</div>
+		<div class="section-content">
+			<p><a href="http://www.swissadme.ch/">http://www.swissadme.ch/</a><br>
+				You need SMILES id of the drugs that results best in the docking score. Enter SMILES and save the response in an excel file.
+			</p>
+		</div>
+			</section>
+			<section class="section_submenu1">
+		<div class="section-heading collapsed" onclick="toggleSectionContent(this)">
+			<i class="fa fa-angle-down"></i>b) PKCSM
+		</div>
+		<div class="section-content">
+			<p><a href="https://biosig.lab.uq.edu.au/pkcsm/prediction">https://biosig.lab.uq.edu.au/pkcsm/prediction</a><br>
+				Enter all SMILES in a text file separated by comma and upload it to pkcsm and save the response in an excel file.
+			</p>
+		</div>
+			</section>
+		</div>
+	</section>
+	<section class="section_menu">
+		<div class="section-heading collapsed" onclick="toggleSectionContent(this)">
+			<i class="fa fa-angle-down"></i>E) Figure Preparation
+		</div>
+		<div class="section-content">
+			<p>You need ADMET data analysis of the chemical that scores best in the docking. Use both website bellow to analysis</p>
+			<section class="section_submenu1">
+		<div class="section-heading collapsed" onclick="toggleSectionContent(this)">
+			<i class="fa fa-angle-down"></i>a) 2D+3D image
+		</div>
+		<div class="section-content">
+			<p>Open both drug and protein file in Discovery Studio. Then Scripts > Visualization > Publication Quality.<br>
+				Select Energy minimized protein and define as receptor.<br>
+				Select Drug and define as Ligand. Then Click Ligand interaction. Then click show 2D diagram.<br>
+				Right click>Display Style>Change font (Times New Roman) and size 1.5>Click Residue> Disc> Click Interaction>Show distance<br>
+				Take a screenshot.<br>
+				Simultaneously After generating 2d image, click Receptor. Select Interacting Receptor Atom>Right click>Label>Add>Select Amino Acid from dropdown>Change font (Times New Roman), Size 12, Color Black>Apply>OK<br>
+				Rotate to better view of all amino acids>Delete green circle carefully>Take a suitable screenshot.<br>
+				Combine 2D and 3D image in png format in an image editor like Paint/Illustrator/Photoshop. I used illustrator. The image look like this.<br>
+				<img src="images/CADD/2d3d.png" height="400px" width="800px">
+			</p>
+		</div>
+			</section>
+			<section class="section_submenu1">
+		<div class="section-heading collapsed" onclick="toggleSectionContent(this)">
+			<i class="fa fa-angle-down"></i>b) Convert png to jiff
+		</div>
+		<div class="section-content">
+			<p>Use an online converter to convert png to jiff
+			</p>
+		</div>
+			</section>
+		</div>
+	</section>
+	<section class="section_menu">
+		<div class="section-heading collapsed" onclick="toggleSectionContent(this)">
+			<i class="fa fa-angle-down"></i>F) MD Simulation
+		</div>
+		<div class="section-content">
+			<p>MD Simulation</p>
+			
+		</div>
+	</section>
+	<section class="section_menu">
+		<div class="section-heading collapsed" onclick="toggleSectionContent(this)">
+			<i class="fa fa-angle-down"></i>G) Manuscript Writting
+		</div>
+		<div class="section-content">
+			<p>Manuscript Writting</p>
+			
 		</div>
 	</section>
 	
