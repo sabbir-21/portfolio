@@ -66,6 +66,15 @@
 			margin-bottom: 10px;
 		}
 		}
+		/* Watermark */
+		body { 
+background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='100px' width='100px' opacity='0.05'><text transform='translate(20, 100) rotate(-45)' fill='rgb(45,45,245)' font-size='20'>Sabbir Ahmed</text></svg>"); 
+}
+		/* Autography font */
+		@font-face {
+			font-family: Autography;
+			src: url("fonts/autography.otf") format("opentype");
+		}
 	</style>
 	<script>
   function toggleSectionContent(button) {
@@ -84,6 +93,7 @@
 </script>
 </head>
 <body>
+	<h1>CADD Process</h1>
 	<section class="section_menu">
       <div class="section-heading collapsed" onclick="toggleSectionContent(this)">
         <i class="fa fa-angle-down"></i><span class="section-title">Softwares Needed</span>
@@ -115,7 +125,7 @@
 			</tr>
 			<tr>
 			  <td style="border: 1px solid #ddd; padding: 10px;">5. Auto SDF Downloader</td>
-			  <td style="border: 1px solid #ddd; padding: 10px;"><a href="https://github.com/sabbir-21/SDF-Protein-CADD/releases/download/v1.2/final_app.exe">https://github.com/sabbir-21/SDF-Protein-CADD/releases/download/v1.2/final_app.exe</a></td>
+			  <td style="border: 1px solid #ddd; padding: 10px;"><a href="https://github.com/sabbir-21/SDF-Protein-CADD/releases">https://github.com/sabbir-21/SDF-Protein-CADD/releases</a></td>
 			</tr>
 			
 		  </tbody>
@@ -532,7 +542,7 @@ Then, ChEMBL drug candidates in clinics >  choose a different Pathway > submit >
 				Simultaneously After generating 2d image, click Receptor. Select Interacting Receptor Atom>Right click>Label>Add>Select Amino Acid from dropdown>Change font (Times New Roman), Size 12, Color Black>Apply>OK<br>
 				Rotate to better view of all amino acids>Delete green circle carefully>Take a suitable screenshot.<br>
 				Combine 2D and 3D image in png format in an image editor like Paint/Illustrator/Photoshop. I used illustrator. The image look like this.<br>
-				<img src="images/CADD/2d3d.png" height="400px" width="800px">
+				<img src="images/CADD/2d3d.png" height="100%" width="100%">
 			</p>
 		</div>
 			</section>
@@ -543,6 +553,8 @@ Then, ChEMBL drug candidates in clinics >  choose a different Pathway > submit >
 		<div class="section-content">
 			<p>Use an online converter to convert png to jiff
 			</p>
+			<p><a href="https://convertio.co/png-jif/">https://convertio.co/png-jif/</a>
+			</p>
 		</div>
 			</section>
 		</div>
@@ -552,8 +564,17 @@ Then, ChEMBL drug candidates in clinics >  choose a different Pathway > submit >
 			<i class="fa fa-angle-down"></i>F) MD Simulation
 		</div>
 		<div class="section-content">
-			<p>MD Simulation</p>
-			
+			<p>I used Gromacs for MD Simulation. Its free</p>
+			<section class="section_submenu1">
+				<div class="section-heading collapsed" onclick="toggleSectionContent(this)">
+					<i class="fa fa-angle-down"></i>a) Gromacs
+				</div>
+				<div class="section-content">
+					<p>A free and open-source software suite for high-performance molecular dynamics and output analysis.<br>
+						Gromacs full tutorial <a href="http://www.mdtutorials.com/gmx/">here</a>
+					</p>
+				</div>
+					</section>
 		</div>
 	</section>
 	<section class="section_menu">
@@ -565,6 +586,8 @@ Then, ChEMBL drug candidates in clinics >  choose a different Pathway > submit >
 			
 		</div>
 	</section>
+	<h1 style="padding-top: 125px"><span style="font-family:Autography">Sabbir</span>
+		</h1>
 	
 </body>
 </html>
