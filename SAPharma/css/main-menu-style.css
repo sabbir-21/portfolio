@@ -1,0 +1,255 @@
+/*Strip the ul of padding and list styling*/
+#instamenu ul {
+	list-style-type:none;
+	margin:0;
+	padding:0;
+	position: absolute;
+}
+
+/*Create a horizontal list with spacing*/
+#instamenu li {
+	display:inline-block;
+	/*float: left;
+	margin-right: 1px;*/
+}
+
+.brand{font-size:34px; color:#aaa3a3 !important; padding-left:15px;}
+.navbar-inverse {
+border: 0px solid !important ;
+background-image: url(../images/bg-topbar.png);
+    background-position: center 100%;
+background-color: #2b61ab;
+min-height: 105px;
+z-index: 2;
+-webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.49);
+	-moz-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.49);
+		box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.49);
+}
+.navbar-inverse-inner {
+	background:#013571;
+}
+.navbar-inverse-inner ul#instamenu{
+	margin-bottom: 2px;
+}
+.clstopscrl {
+	-moz-transition: all 0.5s ease; 
+	-webkit-transition: all 0.5s ease; 
+		transition: all 0.5s ease;
+}
+.fix-sticky {
+    background: #cc1;
+}
+/*Style for menu links*/
+#instamenu li a {
+/*	font-size: 1.15em !important;
+	font-weight: 300 !important;
+	color: #424141 !important;
+	float: none;
+	height: 100%;
+	line-height: 45px;
+	padding: 10px 0px;
+	margin: 0 10px;
+	text-decoration: none;
+	text-shadow: none;
+	letter-spacing: 0.7px;*/
+	font-size: 1.15em !important;
+    font-weight: 400;
+    color: #fff;
+    float: none;
+    height: 100%;
+    line-height: 40px;
+    padding: 8px 0px;
+    margin: 0 8px;
+    text-decoration: none;
+    text-shadow: none;
+    letter-spacing: 0.6px;
+}
+
+/*Hover state for top level links*/
+#instamenu li:hover a {
+	background: transparent;
+    color: #fff !important;
+    border-bottom: 4px solid #fff;
+}
+#instamenu li:hover a.active {
+	background: transparent;
+    color: #424141 !important;
+    border-bottom: 4px solid #424141;
+}
+#instamenu li a.active {
+	background: transparent;
+    color: #2b61ab !important;
+    border-bottom: 4px solid #424141;
+}
+
+/*Style for dropdown links*/
+#instamenu li ul li a {
+	font-size: 12px;
+	margin: 0px;
+}
+#instamenu li:hover ul li a {
+	border-bottom: 0px solid transparent;
+	letter-spacing: 0.11em;
+}
+#instamenu li:hover ul a {
+	color: #2f3036;
+	line-height: 40px;
+	text-align: left;
+}
+
+/*Hover state for dropdown links*/
+#instamenu li:hover ul a:hover {
+	color: #424141;
+}
+
+/*Hide dropdown links until they are needed*/
+#instamenu li > .ulhidden{
+	display: none;
+	z-index: 2;
+	/*background: #165892;*/
+	/*background: #fff;*/
+	background: #0091d2;
+	margin-top: 1px;
+    width: 250px;
+    margin-left: 9px;
+    box-shadow: 4px -3px 13px -7px #2b2b2b;
+	-moz-transition: all 0.5s ease; 
+		-webkit-transition: all 0.5s ease; 
+			transition: all 0.5s ease;
+}
+#instamenu li > .ulhidden li {
+	border-bottom: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    display: block;
+        border-bottom: 1px solid #f0f0f0;
+}
+#instamenu li > .ulhidden li a{
+	text-align: left;
+	line-height: 25px;
+	padding-left: 10px;
+	font-size: 14px !important;
+	width: 100%;
+	display: block;
+	 -moz-transition: all 0.5s ease; -webkit-transition: all 0.5s ease; transition: all 0.5s ease;
+}
+#instamenu li > .ulhidden li a:hover{
+/*	background: #114a7b;
+	margin-left: 0px;
+	padding-left: 5px;*/
+	background: #116db9b3;
+    color: #FFF !important;
+    margin-left: 0px;
+    padding-left: 5px;
+}
+
+#instamenu li > .lastul{
+	right: 0;
+	margin-right: 10px;
+}
+/*Make dropdown links vertical*/
+#instamenu li ul li {
+	display: block;
+	float: none;
+}
+#instamenu li > .ulhidden ul {
+    margin-left: 220px;
+    margin-top: -30px;
+}
+
+/*Prevent text wrapping*/
+#instamenu li ul li a {
+	width: 100%;
+	/*min-width: 100px;*/
+	/*padding: 0 20px;*/
+	color: #000 !important;
+
+}
+
+/*Display the dropdown on hover*/
+#instamenu li:hover > .ulhidden, #instamenu li > .ulhidden:hover {
+	display: block;
+}
+
+/*Style 'show menu' label button and hide it by default*/
+#instamenu .show-menu {
+	text-decoration: none;
+	color: #424141;
+	background: #19c589;
+	text-align: center;
+	padding: 10px 0;
+	display: none;
+}
+
+/*Hide checkbox*/
+#instamenu input[type=checkbox]{
+    display: none;
+    -webkit-appearance: none;
+}
+
+/*Show menu when invisible checkbox is checked*/
+#instamenu input[type=checkbox]:checked ~ #menu{
+    display: block;
+}
+
+
+/*Desktop
+------------------------- */
+@media (min-width: 980px) and (max-width: 1199px) {
+	.navbar-inverse {min-height: 77px!important;}
+	/*#instamenu {
+	    position: absolute;
+	    margin-top: -10px;
+	    padding-right: 0px;
+	    margin-bottom: 0px;
+	    margin-left: 72px;
+	}*/
+	ul#instamenu {width: 100%; text-align: right;}
+	#instamenu li a {
+		font-size: .95em !important;
+		line-height: 35px;
+		padding: 0 0px;
+		margin: 0 3px;
+	}
+	#instamenu li a.active { font-size: 1.10em !important;}
+	#instamenu li:hover a {border-bottom: 3px solid #424141;padding: 0 1px 6px 1px;}
+	#instamenu li > .ulhidden {margin-left: 3px;margin-top: 0px;margin-right: 5px;}
+	#translate-text {width: 65px !important;}
+	p.notranslate {text-align: right !important; font-size: 1.0em;}
+	.translate-box {margin-left: -45px !important;}
+	.on786sc {/*top: 13px !important*/;width: 210px !important;}
+
+}
+
+/* Tablet to desktop
+------------------------- */
+@media (min-width: 768px) and (max-width: 979px) {
+	#instamenu {position: relative;text-align: right;margin-top: 10px;padding-right: 10px;}
+	#instamenu li a {font-size: 1.1em !important; line-height: 35px; font-weight: 500 !important; letter-spacing: 0; margin: 0 3px; padding: 0px;}	
+	#instamenu li:hover a {font-size: 1.1em !important; line-height: 35px; font-weight: 500 !important; letter-spacing: 0; margin: 0 3px; padding: 0px;}	
+	#instamenu li > .ulhidden {margin-top: -3px; margin-left: 3px;}
+	.headernvi a i {display: none;}
+	.on786sc {top: 13px !important;width: 180px !important;}
+	#topMidbar .topSlogan {margin-top: -13px;}
+	.navbar-inverse {min-height: 115px;}
+}
+
+/* Mobile Landscape & Tablet Portrait
+------------------------- */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	#instamenu {display: none!important;}
+	nav.nstkxs {position: relative !important;margin-bottom: 0px;min-height: 73px !important}
+	.headernvi a i {color: #fff !important;}
+	h1.common-headline {padding-top: 10px !important;}
+	#bdwelcome {background-size: 100%;background-position-y: 40px;}
+}
+
+/* Mobile Portrait
+------------------------- */
+@media only screen and (max-width: 479px) {
+	#instamenu {display: none!important;}
+	nav.nstkxs {position: relative !important;margin-bottom: 0px;min-height: 73px !important}
+	h1.common-headline {padding-top: 10px !important;}
+	#bdwelcome {background-size: 100%;background-position-y: 40px;}
+}

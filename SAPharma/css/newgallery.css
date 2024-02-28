@@ -1,0 +1,176 @@
+.mycontrollz{
+	padding-bottom:5%;
+}
+/*.mycontrollz button{
+    background: transparent;
+    border: none;
+    text-align: left;
+    padding: 5px 5px 0px;
+    margin-right: 20px;
+}
+.mycontrollz button:focus, .mycontrollz button:selection{
+  border: none;
+}*/
+.mycontrollz ul#listyle {
+  margin-left: -9px;
+  margin-top: -20px;
+  height: 10px;
+}
+.mycontrollz ul#listyle li{
+  list-style: none;
+  position: relative;
+  display: inline-block;
+  text-align: left;
+  /*background-color: #f0f0f0;*/
+  /*padding: 5px 10px;*/
+  margin-right: 15px;
+  width: 200px;
+  cursor: pointer;
+  /*border-left: 2px solid #ccc;*/
+}
+.mycontrollz ul#listyle li .fndmor {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.mycontrollz ul#listyle li .fndmor a{
+    font-size: 15px;
+    font-weight: 800;
+    color: #003671;
+}
+.mycontrollz ul#listyle li .fndmor a.readmore {
+    display: block;
+    position: relative;
+    text-align: center !important;
+    margin: 0 auto;
+    width: 90%;
+    height: 28px;
+    background: #003671;
+    text-align: center;
+    padding: 2px 17px;
+    margin-top: 9px;
+    color: #fff;
+    transition: 1s;
+}
+.mycontrollz ul#listyle li .fndmor a.readmore:after {
+    position: relative;
+    content: ' ';
+    bottom: 23px;
+    right: -120px;
+    display: block;
+    width: 60px;
+    height: 28px;
+    -webkit-transform: skew(-20deg);
+    -moz-transform: skew(30deg);
+    -o-transform: skew(30deg);
+    background: #003671;
+    z-index: -1;
+    transition: 1s
+}
+.mycontrollz ul#listyle li .fndmor a.readmore:hover {
+    border-bottom: 1px solid #003671;
+    border-top: 1px solid #003671;
+    background: transparent;
+    color: #000;
+    transition: .8s;
+}
+.mycontrollz ul#listyle li .fndmor a.readmore:hover:after { background: #fff; bottom: 34px; right: 50px; -webkit-transform: skew(0deg); -moz-transform: skew(0deg); -o-transform: skew(0deg); width: 150px; height: 48px; background: transparent;}
+.mycontrollz ul#listyle li .fndmor a.readmore i.fa-angle-right {
+    padding-left: 10px;
+}
+
+
+.galcontainerz{
+  padding: 0;
+  text-align: justify;
+  font-size: 0.1px;
+  background: transparent;
+  
+  -webkit-backface-visibility: hidden;
+}
+
+.galcontainerz:after{
+  content: '';
+  display: inline-block;
+  width: 100%;
+}
+
+.galcontainerz .mix,
+.galcontainerz .gap{
+  display: inline-block;
+  width: 49%;
+}
+
+.galcontainerz .mix{
+  text-align: left;
+  background: transparent;
+  margin-bottom: 2%;
+  display: none;
+  position: relative;
+}
+
+.galcontainerz .mix.category-1{
+  /*border-top: 2px solid limegreen;*/
+}
+
+.galcontainerz .mix.category-2{
+  /*border-top: 2px solid yellow;*/
+}
+
+.galcontainerz .mix.category-3{
+  /*border-top: 2px solid white;*/
+}
+
+.galcontainerz .mix:after{
+  content: attr(data-myorder);
+  color: white;
+  font-size: 16px;
+  display: inline-block;
+  vertical-align: top;
+  /*padding: 4% 6%;*/
+  font-weight: 700;
+}
+
+.galcontainerz .mix:before{
+  content: '';
+  display: inline-block;
+  /*padding-top: 60%;*/
+}
+
+.galcontainerz .mix > a span.thumb-icon {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0px;
+    background: rgba(0, 54, 113, 0.27) no-repeat center center;
+    z-index: 4;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.galcontainerz .mix > a span.thumb-icon.photo {
+    position: absolute;
+    display: block;
+    background-image: url(../images/photo.png);
+    /*background-position-y: 75%;*/
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.galcontainerz .mix > a:hover span.thumb-icon{position: relative; display: none; overflow: hidden; bottom: 100%;text-decoration: none;}
+
+@media all and (min-width: 420px){
+  .galcontainerz .mix,
+  .galcontainerz .gap{
+    width: 32%;
+  }
+}
+
+@media all and (min-width: 640px){
+  .galcontainerz .mix,
+  .galcontainerz .gap{
+    width: 23.5%;
+  }
+}

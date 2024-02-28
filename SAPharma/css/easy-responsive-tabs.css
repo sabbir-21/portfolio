@@ -1,0 +1,318 @@
+ul.resp-tabs-list, p {
+    margin: 0px;
+    padding: 0px;
+}
+
+.resp-tabs-list li {
+    font-weight: 600;
+    font-size: 16px;
+    display: inline-block;
+    /*padding: 13px 15px;*/
+    padding:3px 0px 0px 0px;
+    /*margin: 0 4px 0 0;*/
+    margin: 0 0px 0 0;
+    list-style: none;
+    cursor: pointer;
+    float: left;
+}
+
+.resp-tabs-container {
+    padding: 0px;
+    background-color: #fff;
+    clear: left;
+}
+
+h2.resp-accordion {
+    cursor: pointer;
+    padding: 5px;
+    display: none;
+}
+
+.resp-tab-content {
+    display: none;
+    padding: 15px;
+}
+
+.resp-tab-active {
+	border: 1px solid #5AB1D0 !important;
+	border-bottom: none;
+	margin-bottom: -1px !important;
+	padding: 12px 14px 14px 14px !important;
+	border-top: 4px solid #5AB1D0 !important;
+	border-bottom: 0px #fff solid !important;
+}
+
+.resp-tab-active {
+    border-bottom: none;
+    background-color: #fff;
+}
+
+.resp-content-active, .resp-accordion-active {
+    display: block;
+}
+
+.resp-tab-content {
+    border: 1px solid #c1c1c1;
+	border-top-color: #5AB1D0;
+}
+
+h2.resp-accordion {
+    font-size: 13px;
+    border: 1px solid #c1c1c1;
+    border-top: 0px solid #c1c1c1;
+    margin: 0px;
+    padding: 10px 15px;
+}
+
+h2.resp-tab-active {
+    border-bottom: 0px solid #c1c1c1 !important;
+    margin-bottom: 0px !important;
+    padding: 10px 15px !important;
+}
+
+h2.resp-tab-title:last-child {
+    border-bottom: 12px solid #c1c1c1 !important;
+    background: blue;
+}
+
+/*-----------Vertical tabs-----------*/
+.resp-vtabs ul.resp-tabs-list {
+    float: left;
+    width: 100%;
+    margin-right: 4%;
+    padding-right: 1%;
+    padding-left: 1%;
+    padding-top: 5px;
+}
+
+.resp-vtabs .resp-tabs-list li {
+    display: block;
+/*    padding: 11px 0px 8px 0px !important;
+    margin: 0 13px 4px;
+    cursor: pointer;*/
+    float: none;
+    border-bottom: 1px solid #b5b5b5;
+}
+.resp-vtabs .resp-tabs-list > li > a {
+/*    padding: 0px;
+    color: #333;
+    border-bottom: none;
+    font-size: 16px;*/
+    /*background-color: rgba(0,0,0,0.05);*/
+    background-color: transparent;
+    border-bottom: 1px solid rgba(0,0,0,0.5);
+    color: rgba(0, 0, 0, 0.68);
+    display: block;
+    /*padding: 15px 18px;*/
+    padding: 15px 18px 15px 0px;
+    position: relative;
+    text-decoration: none;
+    -webkit-transition: all .2s ease-in;
+    -moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+}
+.resp-vtabs .resp-tabs-list > li > a:hover {
+    /*background-color: #fff;
+    color: #1d5a99;
+    padding-left: 15px;
+    border-bottom: none;
+    -webkit-transition: all .5s ease-in;
+    -moz-transition: all .5s ease-in;
+    -o-transition: all .5s ease-in;
+    transition: all .5s ease-in;*/
+    background-color: #4195f3;
+    color: #ffffff;
+    padding-left: 15px;
+    width: 100%;
+    border-bottom: none;
+    border-radius: unset;
+    -webkit-transition: all .5s ease-in;
+    -moz-transition: all .5s ease-in;
+    -o-transition: all .5s ease-in;
+    transition: all .5s ease-in;
+}
+
+.resp-vtabs .resp-tabs-container {
+    padding: 0px;
+    background-color: transparent;
+    /*border: 1px solid #c1c1c1;*/
+    border: transparent;
+    float: left;
+    width: 68%;
+    min-height: 250px;
+    border-radius: 4px;
+    clear: none;
+}
+
+.resp-vtabs .resp-tab-content {
+    border: none;
+    word-wrap: break-word;
+    font-size: 16px;
+    -webkit-transition:all .2s ease-in;
+    -moz-transition:all .2s ease-in;
+    -o-transition:all .2s ease-in;
+    transition:all .2s ease-in;
+}
+.resp-vtabs .resp-tab-content h2 {font-style: italic;font-size: 35px;color: #000; margin-top: 0px !important; padding-top: 0px !important; margin-bottom: 0px !important;}
+.resp-vtabs .resp-tab-content > h3.tttt {margin-top: 5px; padding-bottom: 20px;}
+.resp-vtabs .resp-tab-content .text-section {margin-top: 20px;}
+.resp-vtabs .resp-tab-content .text-section .product-slider {/*height: 305px; width: 618px;*/background: #fff;margin-bottom: 25px;}
+.resp-vtabs .resp-tab-content .text-section .product-slider .bx-wrapper .bx-viewport ul#bxslider li{width: 100% !important;}
+.resp-vtabs .resp-tab-content .text-section .product-slider .bx-wrapper .bx-viewport ul#bxslider li img{position: relative; margin: 0 auto; text-align: center;}
+.resp-vtabs .resp-tab-content #st-1 .st-btn {height: 30px; line-height: 30px;}
+.resp-vtabs .resp-tab-content #st-1 .st-btn > svg {top: 5px;}
+
+.resp-vtabs li > a, .resp-vtabs li > a:hover, .resp-vtabs li > a:focus {
+    border: 0px !important;
+}
+.resp-vtabs li.active > a, .resp-vtabs li.active > a:hover, .resp-vtabs li.active > a:focus {
+/*    background-color: transparent !important;
+    position: relative;
+    z-index: 1;
+    color: #023574;
+    font-size: 17px;
+    line-height: normal;
+    font-style: normal;
+    padding: 0px !important;*/
+    /*border-top: 1px solid transparent;*/
+    /*border:  0px !important;*/
+    /*border-right: 0px solid transparent !important;*/
+/*    margin-left: 0;
+    -webkit-transition:all .2s ease-in;
+    -moz-transition:all .2s ease-in;
+    -o-transition:all .2s ease-in;
+    transition:all .2s ease-in;*/
+    /*    background-color: rgb(236, 99, 57);
+        border-bottom: 1px solid rgb(237, 99, 57);*/
+    background-color: rgb(0, 53, 114);
+    border-bottom: 1px solid rgb(0, 53, 114);
+    border-radius: 0;
+    color: rgba(0, 0, 0, 0.68);
+    display: block;
+    padding: 15px 18px;
+    margin-right: 0;
+    position: relative;
+    text-decoration: none;
+    color: #ffffff;
+    margin-left: 0;
+    -webkit-transition: all .2s ease-in;
+    -moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+}
+.resp-vtabs li.resp-tab-active { 
+    background-color: transparent !important;
+    position: relative;
+    z-index: 1;
+    color: #023574;
+    font-size: 17px;
+    font-style: italic;
+    padding: 14px 15px 15px 0px !important;
+    border-top: 1px solid transparent;
+    border: 1px solid #f5f5f5 !important;
+    border-left: 4px solid #f1f5f4 !important;
+    border-bottom: 1px solid #013571 !important;
+    margin-bottom: 4px !important;
+    border-right: 1px solid transparent !important;
+    margin-left: 10px;
+}
+
+.resp-arrow {
+    width: 0;
+    height: 0;
+    float: right;
+    margin-top: 3px;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 12px solid #c1c1c1;
+}
+
+h2.resp-tab-active span.resp-arrow {
+    border: none;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 12px solid #9B9797;
+}
+
+/*-----------Accordion styles-----------*/
+h2.resp-tab-active {
+    background: #DBDBDB;/* !important;*/
+}
+
+.resp-easy-accordion h2.resp-accordion {
+    display: block;
+}
+
+.resp-easy-accordion .resp-tab-content {
+    border: 1px solid #c1c1c1;
+}
+
+.resp-easy-accordion .resp-tab-content:last-child {
+    border-bottom: 1px solid #c1c1c1;/* !important;*/
+}
+
+.resp-jfit {
+    width: 100%;
+    margin: 0px;
+}
+
+.resp-tab-content-active {
+    display: block;
+}
+
+h2.resp-accordion:first-child {
+    border-top: 1px solid #c1c1c1;/* !important;*/
+}
+
+.mtcontnts {padding-left: 25px !important;}
+.mtcontnts > .tabpanel{ border: none !important; }
+.mtcontnts > .tab-pane {
+    padding: 0px !important;
+    border: 1px solid transparent !important;
+    margin-top: 5%;
+    padding-right: 12% !important;
+}
+
+.mtcontnts .resp-tab-content h2 {font-style: italic;font-size: 35px;color: #000; margin-top: 0px !important; padding-top: 0px !important; margin-bottom: 0px !important;}
+.mtcontnts .resp-tab-content > h3.tttt {margin-top: 5px; padding-bottom: 20px;}
+.mtcontnts .resp-tab-content .text-section {margin-top: 20px;}
+.mtcontnts .resp-tab-content .text-section .product-slider {background: #fff;margin-bottom: 25px;}
+.mtcontnts .resp-tab-content .text-section .product-slider .bx-wrapper .bx-viewport ul#bxslider li{width: 100% !important;}
+.mtcontnts .resp-tab-content .text-section .product-slider .bx-wrapper .bx-viewport ul#bxslider li img{position: relative; margin: 0 auto; text-align: center;}
+.mtcontnts .resp-tab-content #st-1 .st-btn {height: 30px; line-height: 30px;}
+.mtcontnts .resp-tab-content #st-1 .st-btn > svg {top: 5px;}
+
+.mtcontnts .bx-wrapper img {margin: 0 auto; text-align: center;position: relative; display: block;}
+
+/*Here your can change the breakpoint to set the accordion, when screen resolution changed*/
+@media only screen and (max-width: 768px) {
+    ul.resp-tabs-list {
+        display: none;
+    }
+
+    h2.resp-accordion {
+        display: block;
+    }
+
+    .resp-vtabs .resp-tab-content {
+        border: 1px solid #C1C1C1;
+    }
+
+    .resp-vtabs .resp-tabs-container {
+        border: none;
+        float: none;
+        width: 100%;
+        min-height: 100px;
+        clear: none;
+    }
+
+    .resp-accordion-closed {
+        display: none !important;
+    }
+
+    .resp-vtabs .resp-tab-content:last-child {
+        border-bottom: 1px solid #c1c1c1 !important;
+    }
+    .mtcontnts {padding-left: 0px !important;}
+}
