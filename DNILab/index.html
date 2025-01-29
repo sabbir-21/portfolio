@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DNI Bioinformatics Lab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container" id="containerSection">
+    <h1 class="orderH1">Molecular Dynamic Simulation DNI Lab</h1>
+    <form id="orderForm">
+      <label for="complexSlider">Number of Complexes:</label>
+      <input type="range" id="complexSlider" min="1" max="20" value="1">
+      <span id="complexValue">1</span>
+      
+      <label for="simulationTime">Simulation Time (ns):</label>
+      <select id="simulationTime">
+        <option value="50">50ns</option>
+        <option value="100" selected>100ns</option>
+        <option value="200">200ns</option>
+        <option value="300">300ns</option>
+        <option value="400">400ns</option>
+        <option value="500">500ns</option>
+        <option value="1000">1000ns</option>
+      </select>
+
+      <label><input type="checkbox" id="mmgbsaCheckbox"> Add MMGBSA (+200৳/complex)</label>
+      <label><input type="checkbox" id="dftCheckbox"> Add DFT Analysis (+500৳/complex)</label>
+
+      <h2>Total Price: <span id="priceDisplay">1500</span> Taka</h2>
+      <h3>Estimated Time: <span id="daysDisplay">0</span> Day(s)</h3>
+
+      <button class="orderButtonStyle" type="button" id="payButton">Pay Now</button>
+      <!-- Overlay and Popup for QR Code -->
+      <div id="overlay" class="overlay"></div>
+      <div id="popup" class="popup">
+          <img src="qr-350.png" alt="QR Code" id="qrCodeImage" width="350" height="350" /></br>
+          <span style="justify-content: center;display: flex;">01997236316</span>
+      </div>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" placeholder="Enter your email" required>
+      <label for="transaction">Transaction ID:</label>
+      <input type="text" id="transaction" placeholder="Transaction ID:" required>
+
+      <button class="orderButtonStyle" type="button" id="orderButton">Order Now</button>
+    </form>
+  </div>
+  <script src="order_function.js"></script>
+  <script>
+    const openPopupBtn = document.getElementById('payButton');
+    const popup = document.getElementById('popup');
+    const overlay = document.getElementById('overlay');
+
+    openPopupBtn.addEventListener('click', function() {
+        popup.style.display = 'block';
+        overlay.style.display = 'block';
+    });
+
+    // Close the pop-up when the overlay is clicked (i.e., outside of the QR code)
+    overlay.addEventListener('click', function() {
+        popup.style.display = 'none';
+        overlay.style.display = 'none';
+    });
+</script>
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas"></script>
+
+</body>
+</html>
