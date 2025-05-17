@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Bioinformatics Lab Order</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container" id="containerSection">
+    <h1 class="orderH1">Bioinformatics Lab</h1>
+    <form id="orderForm">
+      <label for="complexSlider">Number of Complexes:</label>
+      <input type="range" id="complexSlider" min="1" max="20" value="1">
+      <span id="complexValue">1</span>
+      
+      <label for="simulationTime">Simulation Time (ns):</label>
+      <select id="simulationTime">
+        <option value="50">50ns</option>
+        <option value="100" selected>100ns</option>
+        <option value="200">200ns</option>
+        <option value="300">300ns</option>
+        <option value="400">400ns</option>
+        <option value="500">500ns</option>
+        <option value="1000">1000ns</option>
+      </select>
+<div class="checkbox-wrapper-2">
+      <label class="check-box"><input type="checkbox" id="mmgbsaCheckbox"> Calculate MMGBSA (+200৳/complex)</label>
+      <label><input type="checkbox" id="dftCheckbox"> Calculate DFT (+500৳/complex)</label></div>
+
+      <h2>Total Price: <span id="originalPrice" style="text-decoration: line-through; display: none;"></span> <span id="finalPrice">1500</span> Taka <span id="discountBadge" style="display: none; background-color: #ffd700; padding: 5px; border-radius: 5px; margin-left: 10px;">33% OFF!</span></h2>
+      <h3>Estimated Time: <span id="daysDisplay">0</span> Day(s)</h3>
+
+      <button class="orderButtonStyle" type="button" id="payButton">Pay Now</button>
+      <!-- Overlay and Popup for QR Code -->
+      <div id="overlay" class="overlay"></div>
+      <div id="popup" class="popup">
+          <img src="qr-350.png" alt="QR Code" id="qrCodeImage" width="350" height="350" /><br>
+          <span style="justify-content: center; display: flex;">01997236316</span>
+      </div>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" placeholder="Enter your email" required>
+      <label for="transaction">Transaction ID:</label>
+      <input type="text" id="transaction" placeholder="Transaction ID:" required>
+      <label for="promoCode">Promo Code:</label>
+      <input type="text" id="promoCode" placeholder="Promo code (Optional)">
+
+      <button class="orderButtonStyle" type="button" id="orderButton">Order Now</button>
+    </form>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script>
+    const slider = document.getElementById('complexSlider');
+    const complexValue = document.getElementById('complexValue');
+    const simulationTime = document.getElementById('simulationTime');
+    const mmgbsaCheckbox = document.getElementById('mmgbsaCheckbox');
+    const dftCheckbox = document.getElementById('dftCheckbox');
+    const originalPrice = document.getElementById('originalPrice');
+    const finalPrice = document.getElementById('finalPrice');
+    const discountBadge = document.getElementById('discountBadge');
+    const daysDisplay = document.getElementById('daysDisplay');
+    const orderButton = document.getElementById('orderButton');
+    const emailField = document.getElementById('email');
+    const transactionField = document.getElementById('transaction');
+    const promoCodeField = document.getElementById('promoCode');
+
+    slider.addEventListener('input', updatePrice);
+    simulationTime.addEventListener('change', updatePrice);
+    mmgbsaCheckbox.addEventListener('change', updatePrice);
+    dftCheckbox.addEventListener('change', updatePrice);
+    promoCodeField.addEventListener('input', updatePrice);
+
+    function updatePrice() {
+      const numComplexes = parseInt(slider.value);
+      const nsValue = parseInt(simulationTime.value);
+      let basePrice = numComplexes * (nsValue / 100) * 1500;
+
+      if (mmgbsaCheckbox.checked) {
+        basePrice += numComplexes * 200;
+      }
+      
+      if (dftCheckbox.checked) {
+        basePrice += numComplexes * 500;
+      }
+
+      const promoCode = promoCodeField.value;
+      let finalPriceValue = basePrice;
+      if (promoCode === "SABBIR") {
+        const discountedPrice = basePrice * (1 - 0.33333333);
+        originalPrice.textContent = basePrice;
+        originalPrice.style.display = 'inline';
+        finalPrice.textContent = Math.round(discountedPrice);
+        discountBadge.style.display = 'inline';
+        finalPriceValue = Math.round(discountedPrice);
+      } else {
+        originalPrice.style.display = 'none';
+        finalPrice.textContent = basePrice;
+        discountBadge.style.display = 'none';
+        finalPriceValue = basePrice;
+      }
+
+      complexValue.textContent = numComplexes;
+      const days = Math.ceil((numComplexes * (nsValue / 100)) / 2);
+      daysDisplay.textContent = days;
+    }
+
+    orderButton.addEventListener('click', () => {
+      const email = emailField.value;
+      const transaction = transactionField.value;
+      const price = finalPrice.textContent;
+      const days = daysDisplay.textContent;
+      const numComplexes = slider.value;
+      const nsValue = simulationTime.value;
+      const mmgbsa = mmgbsaCheckbox.checked ? "Yes" : "No";
+      const dft = dftCheckbox.checked ? "Yes" : "No";
+
+      if (email && transaction) {
+        orderButton.disabled = true;
+
+        const googleFormURL = 'https://docs.google.com/forms/d/e/1FAIpQLSdPSJ7iugjdoNI50RACxP3p0n23CZhzailXVBCgQ81AlneFYg/formResponse';
+        const formData = new URLSearchParams();
+        formData.append('entry.267273701', email);
+        formData.append('entry.1369750810', transaction);
+        formData.append('entry.1374397848', price);
+        formData.append('entry.1240618803', numComplexes);
+        formData.append('entry.2026139812', nsValue);
+        formData.append('entry.1734846573', mmgbsa);
+        formData.append('entry.101306927', dft);
+
+        fetch(googleFormURL, {
+          method: 'POST',
+          body: formData,
+          mode: 'no-cors',
+        }).then(() => {
+            displayThankYouMessage({
+              email,
+              transaction,
+              price,
+              days,
+              numComplexes,
+              nsValue,
+              mmgbsa,
+              dft,
+            });
+        }).catch(() => {
+          orderButton.disabled = false;
+        });
+      } else {
+        alert('Please enter your email and transaction ID.');
+      }
+    });
+
+    function displayThankYouMessage(orderInfo) {
+      const container = document.querySelector('.container');
+      
+      container.innerHTML = 
+        `<div id="thankYouSection">
+          <h1>Thank You for Your Order!</h1>
+          <p>Your order details are as follows:</p>
+          <ul>
+            <li><strong>Email:</strong> ${orderInfo.email}</li>
+            <li><strong>Price:</strong> ${orderInfo.price} Taka</li>
+            <li><strong>Transaction ID:</strong> ${orderInfo.transaction}</li>
+            <li><strong>Estimated Time:</strong> ${orderInfo.days} day(s)</li>
+            <li><strong>Number of Complexes:</strong> ${orderInfo.numComplexes}</li>
+            <li><strong>Simulation Time:</strong> ${orderInfo.nsValue} ns</li>
+            <li><strong>MMGBSA:</strong> ${orderInfo.mmgbsa}</li>
+            <li><strong>DFT:</strong> ${orderInfo.dft}</li>
+          </ul>
+          <button class="orderButtonStyle" id="downloadInvoiceButton">Download Your Invoice</button>
+        </div>`;
+
+      const downloadInvoiceButton = document.getElementById('downloadInvoiceButton');
+      downloadInvoiceButton.addEventListener('click', () => {
+        const containerSection = document.getElementById('containerSection');
+        
+        // Add a slight delay to ensure content is fully rendered
+    setTimeout(() => {
+      html2canvas(containerSection).then((canvas) => {
+        console.log('Canvas generated');
+        const link = document.createElement('a');
+        link.download = 'invoice.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+        console.log('Download initiated');
+      }).catch((error) => {
+        console.error('Error generating canvas:', error);
+      });
+    }, 100); // 100ms delay
+  });
+    }
+
+    // Initial update to set correct values on page load
+    updatePrice();
+
+    const openPopupBtn = document.getElementById('payButton');
+    const popup = document.getElementById('popup');
+    const overlay = document.getElementById('overlay');
+
+    openPopupBtn.addEventListener('click', function() {
+      popup.style.display = 'block';
+      overlay.style.display = 'block';
+    });
+
+    overlay.addEventListener('click', function() {
+      popup.style.display = 'none';
+      overlay.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
