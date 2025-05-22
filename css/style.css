@@ -787,9 +787,13 @@ ul.nav li.active a:before {
 
 /*Testimonials-stylesheets-include-here*/
 #testimonials {
-	background-image:url(../images/Testimonials/01.jpg);
+	background-image:url(../images/Testimonials/lab_rotary.jpg);
 	height:450px;
 	text-align:center;
+	opacity: 0.8;
+}
+#owl-testi {
+	background-color: rgba(0, 0, 0, 0.6);
 }
 #testimonials .owl-theme .owl-controls .owl-page span{
 background:#3422f8;
@@ -991,8 +995,6 @@ textarea.form-control {
 }
 
 /*Index-1-Stylesheets-End-Here*/
-
-
 
 /*Index-3-Stylesheets-Start-Here*/
 
@@ -1255,4 +1257,55 @@ color:#fff;
   /*font-size: 16px;*/
 }
 
+/* Custom form styles (place in your separate CSS file) */
+
+#cf-contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 30px;
+  border-radius: 8px;
+}
+
+.cf-form-group {
+  margin-bottom: 20px;
+}
+
+.cf-form-label {
+  display: block;
+  color: #ffffff;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.cf-form-input,
+.cf-form-textarea {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333333;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 12px;
+  font-size: 16px;
+}
+
+.cf-form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.cf-submit-button {
+  background-color: #007bff;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.cf-submit-button:hover {
+  background-color: #0056b3;
+}
 	
