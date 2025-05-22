@@ -103,11 +103,13 @@ color: #FFF;
 	background-position: center;
 	background-repeat: no-repeat;
 	height: 296px;
+	width: 296px;
 	left: 38%;
+	top: 32%;
 	margin: -20px 0 0 -20px;
 	position: absolute;
-	top: 32%;
-	width: 296px;
+	
+	
 }
 .preload-placeholder {
 	background: none;
@@ -116,6 +118,8 @@ color: #FFF;
 	text-align: center;
 	top: 65%;
 }
+/* Custom Preloader */
+
 .parallex {
 	background-attachment:fixed;
 	background-position:center;
@@ -787,13 +791,14 @@ ul.nav li.active a:before {
 
 /*Testimonials-stylesheets-include-here*/
 #testimonials {
-	background-image:url(../images/Testimonials/lab_rotary.jpg);
+	background-image:url(../images/Slider/rotary2.jpg);
 	height:450px;
 	text-align:center;
 	opacity: 0.8;
 }
 #owl-testi {
 	background-color: rgba(0, 0, 0, 0.6);
+	border-radius: 20px;
 }
 #testimonials .owl-theme .owl-controls .owl-page span{
 background:#3422f8;
@@ -950,8 +955,17 @@ textarea.form-control {
 	border:2px solid #999;
 	height:50px;
 	width:50px;
-	border-radius:50px;
+	border-radius:50%;
 	padding:25%;
+}
+#footer-down ul li a img {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #999;
+  border-radius: 50%;
+  padding: 5px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
 }
 #footer-down ul li.facebook i.fa:hover {
 	color:#3b5998;
@@ -964,6 +978,10 @@ textarea.form-control {
 #footer-down ul li.linkedin i.fa:hover {
 	color:#007bb6;
 	border:2px solid #007bb6;
+}
+#footer-down ul li a:hover img {
+	color:#0d0d0d;
+	border:2px solid #0d0d0d;
 }
 #footer-down ul li.instagram i.fa:hover {
 	color:#517fa4;
