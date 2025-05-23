@@ -1,619 +1,778 @@
 <!DOCTYPE html>
-
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="author" content="Sabbir Ahmed">
-<title>Sabbir Ahmed's Portfolio</title>
-<meta name="description" content="Sabbir Ahmed is a Pharmacist and a Researcher">
-<meta name="keywords" content="portfolio, agency, bootstrap theme, mobile responsive, template, personal">
-<!--css -->
-<link rel="shortcut icon" href="images/Logo/fav.png" type="image/x-icon">
-<!--Bootstrap-->
-<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-<!--Stylesheets-->
-<link rel="stylesheet" type="text/css" href="css/style.css">
-<!--Responsive-->
-<link rel="stylesheet" type="text/css" href="css/responsive.css">
-<!--Animation-->
-<link rel="stylesheet" type="text/css" href="css/animate.css">
-<!--Prettyphoto-->
-<link rel="stylesheet" type="text/css" href="css/prettyPhoto.css">
-<!--Font-Awesome-->
-<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Sabbir Ahmed's Portfolio</title>
+  <meta name="description" content="Sabbir Ahmed is a Pharmacist and a Researcher">
+  <meta name="keywords" content="portfolio, agency, bootstrap theme, mobile responsive, template, personal">
 
-<!--Owl-Slider-->
-<link rel="stylesheet" type="text/css" href="css/owl.carousel.css">
-<link rel="stylesheet" type="text/css" href="css/owl.theme.css">
-<link rel="stylesheet" type="text/css" href="css/owl.transitions.css">
-<!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
-  [endif]-->
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <!--<link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">-->
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
 </head>
-<body data-spy="scroll" data-target=".navbar-default" data-offset="100">
-<!--Preloader-->
-<div id="preloader">
-  <div id="pre-status">
-    <div class="preload-placeholder"></div>
-  </div>
-</div>
-<!--Navigation-->
-<header id="menu">
-  <div class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-          <a class="navbar-brand" href="#"><img src="images/Logo/logo.png" alt=""></a> </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li class="active"><a class="scroll" href="#slider">Home</a></li>
-            <li><a class="scroll" href="#about">About</a></li>
-            <li><a class="scroll" href="#experience">Experience</a></li>
-            <li><a class="scroll" href="#portfolio">Portfolio</a></li>
-            <li><a class="scroll" href="#contact">Contact</a></li>
+
+<body class="index-page">
+
+  <header id="header" class="header dark-background d-flex flex-column">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+
+    <div class="profile-img">
+      <img src="assets/img/sabbir.jpg" alt="" class="img-fluid rounded-circle">
+    </div>
+
+    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+      <!-- Uncomment the line below if you also wish to use an image logo -->
+      <!-- <img src="assets/img/logo.png" alt=""> -->
+      <h1 class="sitename">Sabbir Ahmed</h1>
+    </a>
+
+    <div class="social-links text-center">
+      
+      <a href="https://www.facebook.com/sabbir299" class="facebook"><i class="bi bi-facebook"></i></a>
+      <a href="https://www.linkedin.com/in/sabbir-ahmed-256438190" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      <a href="https://twitter.com/SabbirA58223088" class="twitter"><i class="bi bi-twitter-x"></i></a>
+      <a href="https://www.instagram.com/_sabbir21/" class="instagram"><i class="bi bi-instagram"></i></a>
+      
+      
+    </div>
+
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
+        <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
+        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
+        <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
+        <li><a href="#experience"><i class="bi bi-hdd-stack navicon"></i> Experience</a></li>
+        <!--
+        <li class="dropdown"><a href="#"><i class="bi bi-menu-button navicon"></i> <span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <ul>
+            <li><a href="#">Dropdown 1</a></li>
+            <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <ul>
+                <li><a href="#">Deep Dropdown 1</a></li>
+                <li><a href="#">Deep Dropdown 2</a></li>
+                <li><a href="#">Deep Dropdown 3</a></li>
+                <li><a href="#">Deep Dropdown 4</a></li>
+                <li><a href="#">Deep Dropdown 5</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Dropdown 2</a></li>
+            <li><a href="#">Dropdown 3</a></li>
+            <li><a href="#">Dropdown 4</a></li>
           </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-      </div>
-      <!-- /.container-fluid -->
-    </div>
-  </div>
-</header>
-<!--Slider-Start-->
-<section id="slider">
-  <div id="home-carousel" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-      <div class="item active" style="background-image:url(images/Slider/sa.jpg)">
-        <div class="carousel-caption container">
-          <div class="row">
-            <div class="col-md-7 col-sm-12 col-xs-12">
-              <h2>Sabbir Ahmed</h2>
-              <h1>A Pharmacist</h1>
-              <p>Specialize in managing medication therapies and ensuring the safe use of pharmaceuticals. Utilize extensive knowledge of drug interactions and patient care to enhance health outcomes and solve complex healthcare issues.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="item" style="background-image:url(images/Slider/rotary2.jpg)">
-        <div class="carousel-caption container">
-          <div class="row">
-            <div class="col-md-7 col-sm-12 col-xs-12">
-              <h2>Sabbir Ahmed</h2>
-              <h1>A Researcher</h1>
-              <p>Specialize in conducting studies and experiments using a range of methodologies and tools. Analyze data and produce insights to solve complex problems and advance knowledge across various disciplines.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="item" style="background-image:url(images/Slider/03.jpg)">
-        <div class="carousel-caption container">
-          <div class="row">
-             <div class="col-md-7 col-sm-12 col-xs-12">
-              <h2>Sabbir Ahmed</h2>
-              <h1>A Programmer</h1>
-              <p>Specialize in developing software and analyzing data using R and Python. Apply programming skills to create efficient algorithms and solve complex problems in data science and software engineering.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <a class="home-carousel-left" href="#home-carousel" data-slide="prev"><i class="fa fa-angle-left"></i></a> <a class="home-carousel-right" href="#home-carousel" data-slide="next"><i class="fa fa-angle-right"></i></a> </div>
-  </div>
-  <!--/#home-carousel-->
-</section>
-<!--About-Section-Start-->
-<section id="about">
-  <div class="container">
-    <div class="col-md-8 col-md-offset-2">
-      <div class="heading">
-        <h2>ABOUT <span>ME</span></h2>
-        <div class="line"></div>
-        <p></p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12 ab-sec">
-        <div class="col-md-6">
-          <h3 class="wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms"><span>A</span> Pharmacist, Researcher and Programmer</h3>
-          <p><span><strong>S</strong></span>abbir Ahmed is a multifaceted professional excelling in pharmacotherapy, biopharmaceutics, and software development. As a pharmacist, he specializes in medication management and clinical pharmacology, ensuring patient safety and optimizing drug therapies. In his research, Sabbir delves into bioinformatics and molecular biology, exploring drug delivery systems and personalized medicine. His proficiency in Python and R enables him to develop innovative solutions and analyze big data, bridging the gap between healthcare and technology for better health outcomes.</p>
-        </div>
-        <div class="col-md-6 ab-sec-img wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms"><img src="images/Slider/rotary.jpg" alt=""> </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!--Blue Horizontal-Start-->
-<div class="bg-sec">
-  <div class="container">
-    <div class="col-md-10 col-sm-10 col-xs-8">
-    </div>
-  </div>
-</div>
-<!--Service-Section-Start-->
-<section id="experience">
-  <div class="container"><p></p><p></p>
-    <div class="col-md-8 col-md-offset-2">
-      <div class="heading">
-        <h2>EXPERIEN<span>CE</span></h2>
-        <div class="line"></div><p></p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="features-sec">
-        <div class="col-md-4 col-sm-6 col-xs-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="0ms">
-          <div class="media service-box">
-            <div class="pull-left"> <i class="fa fa-desktop"></i> </div>
-            <div class="media-body">
-              <h5 class="media-heading">Computer Aided Drug Design</h5>
-              <p>Performed molecular modeling and docking studies using software tools to identify potential drug candidates and optimize lead compounds.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-6 col-xs-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="400ms">
-          <div class="media service-box">
-            <div class="pull-left"> <i class="fa fa-bar-chart"></i> </div>
-            <div class="media-body">
-              <h5 class="media-heading">Drug Development</h5>
-              <p>Gained hands-on experience in preclinical phases, including formulation, pharmacokinetics, and evaluating drug safety and efficacy parameters.</p>
-            </div>
-          </div>
-        </div>
-        <!--/.col-md-4-->
-        <div class="col-md-4 col-sm-6 col-xs-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms">
-          <div class="media service-box">
-            <div class="pull-left"> <i class="fa fa-pagelines"></i> </div>
-            <div class="media-body">
-              <h5 class="media-heading">Plant Chemical Extraction</h5>
-              <p>Executed phytochemical extraction using solvents and chromatographic methods to isolate bioactive compounds from medicinal plants.</p>
-            </div>
-          </div>
-        </div>
-        <!--/.col-md-4-->
-        <div class="col-md-4 col-sm-6 col-xs-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="200ms">
-          <div class="media service-box">
-            <div class="pull-left"> <i class="fa fa-male"></i> </div>
-            <div class="media-body">
-              <h5 class="media-heading">In-Vivo Experiment</h5>
-              <p>Conducted animal studies for pharmacological testing, including dose administration, monitoring, and ethical handling of laboratory animals.</p>
-            </div>
-          </div>
-        </div>
-        <!--/.col-md-4-->
-        <div class="col-md-4 col-sm-6 col-xs-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="300ms">
-          <div class="media service-box">
-            <div class="pull-left"> <i class="fa fa-plus-square"></i> </div>
-            <div class="media-body">
-              <h5 class="media-heading">Vaccine Design</h5>
-              <p>Utilized immunoinformatics tools to predict antigenic epitopes and design multi-epitope vaccine constructs for disease prevention.</p>
-            </div>
-          </div>
-        </div>
-        <!--/.col-md-4-->
-        <div class="col-md-4 col-sm-6 col-xs-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="400ms">
-          <div class="media service-box">
-            <div class="pull-left"> <i class="fa fa-pencil-square"></i> </div>
-            <div class="media-body">
-              <h5 class="media-heading">Peptide Design</h5>
-              <p>Designed therapeutic peptides using bioinformatics approaches to optimize stability, activity, and target-specific interactions in drug research.</p>
-            </div>
-          </div>
-        </div>
-        
-        
-        <!--/.col-md-4-->
-      </div>
-    </div>
-    <div class="experience">
-      <div class="col-sm-6 col-xs-12">
-        <div class="our-skills wow fadeInLeft" data-wow-duration="2000" data-wow-delay="300ms">
-          <div class="single-skill wow fadeInLeft" data-wow-duration="2000" data-wow-delay="300ms">
-            <p class="lead">Computer Aided Drug Design</p>
-            <div class="progress">
-              <div class="progress-bar six-sec-ease-in-out" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="90" style="width: 95%;"> 95% </div>
-            </div>
-          </div>
-          <div class="single-skill wow fadeInLeft" data-wow-duration="2000" data-wow-delay="400ms">
-            <p class="lead">Molecular Dynamic Simulation</p>
-            <div class="progress">
-              <div class="progress-bar six-sec-ease-in-out" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="80" style="width: 80%;"> 90% </div>
-            </div>
-          </div>
-          <div class="single-skill wow fadeInLeft" data-wow-duration="2000" data-wow-delay="500ms">
-            <p class="lead">R Programming</p>
-            <div class="progress">
-              <div class="progress-bar progress-bar-primary six-sec-ease-in-out" role="progressbar" aria-valuenow="0" aria-valuemin="100" aria-valuemax="60" style="width: 60%;"> 60% </div>
-            </div>
-          </div>
-          <div class="single-skill wow fadeInLeft" data-wow-duration="2000" data-wow-delay="600ms">
-            <p class="lead">Chemical Extraction</p>
-            <div class="progress">
-              <div class="progress-bar progress-bar-primary six-sec-ease-in-out" role="progressbar" aria-valuenow="0" aria-valuemin="100" aria-valuemax="70" style="width: 70%;"> 80% </div>
-            </div>
-          </div>
-          <div class="single-skill wow fadeInLeft" data-wow-duration="2000" data-wow-delay="600ms">
-            <p class="lead">Vaccine Design</p>
-            <div class="progress">
-              <div class="progress-bar progress-bar-primary six-sec-ease-in-out" role="progressbar" aria-valuenow="0" aria-valuemin="100" aria-valuemax="45" style="width: 70%;"> 45% </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6  wow fadeInUp" data-wow-duration="2000" data-wow-delay="600ms"> <img src="images/Service/me.png" class="img-responsive" alt=""> </div>
-    </div>
-  </div>
-</section>
-
-<div class="bg-sec">
-  <div class="container">
-    <div class="col-md-10 col-sm-10 col-xs-8">
-    </div>
-  </div>
-</div>
-
-<!--Portfolio-Section-Start-->
-<section id="portfolio">
-  <div class="container">
-    <div class="col-md-8 col-md-offset-2">
-      <div class="heading">
-        <h2>PAPE<span>RS</span></h2>
-        <div class="line"></div><p></p>
-      </div>
-    </div>
-    <div class="text-center">
-      <ul class="portfolio-filter">
-        <li><a class="active" href="#" data-filter="*">All Works</a></li>
-        <li><a href="#" data-filter=".creative">Phytochemical</a></li>
-        <li><a href="#" data-filter=".corporate">Wet Lab</a></li>
-        <li><a href="#" data-filter=".portfolio">CADD</a></li>
+        </li>-->
+        <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
       </ul>
-      <!--/#portfolio-filter-->
-    </div>
-    <div class="portfolio-items">
-      <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item creative">
-        <div class="portfolio-item-inner"> <img class="img-responsive" src="images/Portfolio/lig3.jpg" alt="">
-          <div class="portfolio-info"> <a class="preview" href="images/Portfolio/lig3.jpg" data-rel="prettyPhoto"><i class="fa fa-plus-circle"></i></a>
-            <h6><a style="color: beige;" href='https://doi.org/10.1101/2025.02.22.639676'>CancerBiology</a></h6>
-            <p>https://doi.org/10.1101/2025.02.22.639676</p>
-          </div>
-        </div>
-      </div>
-      <!--/.portfolio-item-->
-      <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item corporate portfolio">
-        <div class="portfolio-item-inner"> <img class="img-responsive" src="images/Portfolio/antioxidant.jpg" alt="">
-          <div class="portfolio-info"> <a class="preview" href="images/Portfolio/antioxidant.jpg" data-rel="prettyPhoto"><i class="fa fa-plus-circle"></i></a>
-            <h6><a style="color: beige;" href='https://doi.org/10.1016/j.phyplu.2025.100777'>Phytomedicine Plus</a></h6>
-            <p>https://doi.org/10.1016/j.phyplu.2025.100777</p>
-          </div>
-        </div>
-      </div>
-      <!--/.portfolio-item-->
-      <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item creative">
-        <div class="portfolio-item-inner"> <img class="img-responsive" src="images/Portfolio/denv.jpg" alt="">
-          <div class="portfolio-info"> <a class="preview" href="images/Portfolio/denv.jpg" data-rel="prettyPhoto"><i class="fa fa-plus-circle"></i></a>
-            <h6><a style="color: beige;" href='https://doi.org/10.1002/slct.202404053'>ChemistrySelect</a></h6>
-            <p>https://doi.org/10.1002/slct.202404053</p>
-          </div>
-        </div>
-      </div>
-      <!--/.portfolio-item-->
-      <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item corporate">
-        <div class="portfolio-item-inner"> <img class="img-responsive" src="images/Portfolio/verapamil.jpg" alt="">
-          <div class="portfolio-info"> <a class="preview" href="images/Portfolio/verapamil.jpg" data-rel="prettyPhoto"><i class="fa fa-plus-circle"></i></a>
-            <h6><a style="color: beige;" href='https://doi.org/10.1016/j.imu.2024.101493'>Informatics in Medicine Unlocked</a></h6>
-            <p>https://doi.org/10.1016/j.imu.2024.101493</p>
-          </div>
-        </div>
-      </div>
-      <!--/.portfolio-item-->
-      <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item creative portfolio">
-        <div class="portfolio-item-inner"> <img class="img-responsive" src="images/Portfolio/amazon.jpg" alt="">
-          <div class="portfolio-info"> <a class="preview" href="images/Portfolio/amazon.jpg" data-rel="prettyPhoto"><i class="fa fa-plus-circle"></i></a>
-            <h6><a style="color: beige;" href='https://doi.org/10.1002/slct.202303557'>ChemistrySelect</a></h6>
-            <p>https://doi.org/10.1002/slct.202303557</p>
-          </div>
-        </div>
-      </div>
-      <!--/.portfolio-item-->
-      <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item corporate">
-        <div class="portfolio-item-inner"> <img class="img-responsive" src="https://placehold.co/850x540" alt="">
-          <div class="portfolio-info"> <a class="preview" href="https://placehold.co/850x540" data-rel="prettyPhoto"><i class="fa fa-plus-circle"></i></a>
-            <h6>Paper</h6>
-            <p>Journal</p>
-          </div>
-        </div>
-      </div>
-      <!--/.portfolio-item-->
-    </div>
-  </div>
-</section>
+    </nav>
 
-<!--Testimonials-Section-Start-->
-<section id="testimonials" class="parallex">
-  <div class="container" >
-    <div class="quote"> <i class="fa fa-quote-left"></i> </div>
-    <div class="clearfix"></div>
-    <div class="slider-text">
-      <div id="owl-testi" class="owl-carousel owl-theme">
-        <div class="item">
-          <div  class="col-md-10 col-md-offset-1"> <img src="images/Testimonials/02.jpg" class="img-circle" alt="">
-            <h5>An exceptionally dedicated student with strong research aptitude. Shows excellent skills in computational drug design and academic writing. Highly recommended for advanced studies.</h5>
-            <h6>NURUL ISLAM</h6>
-            <p>Associate Professor, Department of Pharmacy, MBSTU, BD</p>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+
+      <img src="assets/img/sa_center.jpg" alt="" data-aos="fade-in" class="">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <h2>Sabbir Ahmed</h2>
+        <p>I'm <span class="typed" data-typed-items="Researcher, Consultant, Pharmacist, Programmer"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>About</h2>
+        <p>Sabbir Ahmed is a multifaceted professional excelling in pharmacotherapy, biopharmaceutics, and software development. As a pharmacist, he specializes in medication management and clinical pharmacology, ensuring patient safety and optimizing drug therapies. In his research, Sabbir delves into bioinformatics and molecular biology, exploring drug delivery systems and personalized medicine. His proficiency in Python and R enables him to develop innovative solutions and analyze big data, bridging the gap between healthcare and technology for better health outcomes.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <!--
+        <div class="row gy-4 justify-content-center">
+          <div class="col-lg-4">
+            <img src="assets/img/my-profile-img.jpg" class="img-fluid" alt="">
           </div>
+          <div class="col-lg-8 content">
+            <h2>Researcher &amp; Web Developer.</h2>
+            <p class="fst-italic py-3">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+              magna aliqua.
+            </p>
+            <div class="row">
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>1 May 1995</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>www.example.com</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+123 456 7890</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>New York, USA</span></li>
+                </ul>
+              </div>
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>30</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Master</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>email@example.com</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
+                </ul>
+              </div>
+            </div>
+            <p class="py-3">
+              Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt adipisci omnis et ut. Nulla accusantium dolor incidunt officia tempore. Et eius omnis.
+              Cupiditate ut dicta maxime officiis quidem quia. Sed et consectetur qui quia repellendus itaque neque.
+            </p>
+          </div>-->
+
         </div>
-        <div class="col-md-10 col-md-offset-1 "> <img src="images/Testimonials/04.jpg" class="img-circle" alt="">
-          <h5>Demonstrates deep curiosity and consistent effort in experimental and theoretical pharmacy research. A reliable and insightful contributor to any scientific team.</h5>
-          <h6>FARIA FARZANA PERVEEN</h6>
-          <p>Associate Professor, Department of Pharmacy, MBSTU, BD</p>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Resume</h2>
+        <p>Pharmacy graduate with hands-on experience in computer-aided drug design, in-vivo experimentation, and plant-based chemical extraction. Proficient in peptide and vaccine design using computational tools. Strong research background with excellent problem-solving, data analysis, and teamwork skills. Committed to innovation in pharmaceutical sciences and pursuing opportunities that blend experimental and computational approaches.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="resume-title">Sumary</h3>
+
+            <div class="resume-item pb-0">
+              <h4>Sabbir Ahmed</h4>
+              <p><em>Skilled in pharmacotherapy, CADD, and bioinformatics, combining research and coding expertise to develop innovative solutions in drug design, delivery, and personalized medicine.</em></p>
+              <ul>
+                <li>Gazipur 1704, Bangladesh</li>
+                <li>+880199723****</li>
+                <li>mdsabbirahmed25@gmail.com</li>
+              </ul>
+            </div><!-- Edn Resume Item -->
+
+            <h3 class="resume-title">Education</h3>
+            <div class="resume-item">
+              <h4>Master of Pharmacy</h4>
+              <h5>2025 - 2026</h5>
+              <p><em>Mawlana Bhashani Science and Technology University, Santosh 1902, Bangladesh</em></p>
+              <p>CGPA - 3.90 in scale of 4.00</p>
+              <p>Focused on advanced pharmaceutical research including drug development, CADD, and experimental pharmacology. Completed thesis work with emphasis on computational modeling and biological evaluation of therapeutic agents.</p>
+            </div><!-- Edn Resume Item -->
+
+            <div class="resume-item">
+              <h4>Bachelor of Pharmacy Professional</h4>
+              <h5>2019 - 2025</h5>
+              <p><em>Mawlana Bhashani Science and Technology University, Santosh 1902, Bangladesh</em></p>
+              <p>CGPA - 3.75 in scale of 4.00</p>
+              <p>Completed a five-year professional degree with coursework and lab training in pharmaceutics, pharmacology, pharmaceutical chemistry, and clinical pharmacy. Included research, in-vivo studies, and drug design projects.</p>
+            </div><!-- Edn Resume Item -->
+
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="resume-title">Professional Experience</h3>
+            <div class="resume-item">
+              <h4>Chief Academic Advisor</h4>
+              
+              <p><em>Innovative Research Center - IRC, Dhaka, Bangladesh </em></p><h5>2024 - Present</h5>
+              <ul>
+                <li>Delivering lectures to training participants and help other trainers</li>
+                <li>Help the project students, share my knowledge to solve the problem related to their projects, and the review and feedback of assignments for training participants</li>
+                <li>Troubleshoot computational tools, particularly Molecular dynamics (MD) simulation tools such as Gromacs, and Desmond.</li>
+                <li>Handling administrative tasks, including scheduling, budget management, effective communication with collaborators and coordinate research projects</li>
+                <li>Analysis Simulation Trajectory data with advance tools like Python and R programming, and Mass spectroscopy proteomics data</li>
+              </ul>
+            </div><!-- Edn Resume Item -->
+
+            <div class="resume-item">
+              <h4>Research Assistant</h4>
+              <p><em>Phytochemistry and Pharmacognosy Lab</em></p>
+              <h5>2023 - 2025</h5>
+              <ul>
+                <li>Designing potential drug and peptide therapeutic against viral proteins</li>
+                <li>Utilizing MLR and QSAR for compound-activity relationships and PCA for structural and energy profile analysis</li>
+                <li>SNPs retrieval, filter deleterious SNPs by bioinformatics algorithms</li>
+                <li>Drafting manuscripts, and preparing figures and graphs for publication</li>
+              </ul>
+            </div><!-- Edn Resume Item -->
+
+          </div>
+
         </div>
-        <div  class="col-md-10 col-md-offset-1 "> <img src="images/Testimonials/04.jpg" class="img-circle" alt="">
-          <h5>Possesses strong laboratory skills and keen scientific understanding. Always eager to learn and contribute meaningfully to group projects and discussions.</h5>
-          <h6>MAHFUZA AKTER</h6>
-          <p>Lecturer, Department of Pharmacy, MBSTU, BD</p>
+
+      </div>
+
+    </section><!-- /Resume Section -->
+
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Skills</h2>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row skills-content skills-animation">
+
+          <div class="col-lg-6">
+
+            <div class="progress">
+              <span class="skill"><span>Extraction and Isolation</span> <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>Bioinformatics</span> <i class="val">80%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>Drug Discovery</span> <i class="val">75%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+          </div>
+
+          <div class="col-lg-6">
+
+            <div class="progress">
+              <span class="skill"><span>Data Analysis</span> <i class="val">80%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>Programming</span> <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>Designing</span> <i class="val">75%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+          </div>
+
         </div>
-        <div  class="col-md-10 col-md-offset-1 "> <img src="images/Testimonials/nasim.jpg" class="img-circle" alt="">
-          <h5>A promising young researcher with a solid foundation in pharmaceutical sciences and a growing interest in translational research. Highly driven and focused.</h5>
-          <h6>NASIM AHMED</h6>
-          <p>PhD at Wayne State University, MI, USA</p>
+
+      </div>
+
+    </section><!-- /Skills Section -->
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Portfolio</h2>
+        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-app">Papers</li>
+            <li data-filter=".filter-product">Isolation</li>
+            <li data-filter=".filter-branding">Formulation</li>
+            <li data-filter=".filter-books">Bioinformatics</li>
+          </ul><!-- End Portfolio Filters -->
+
+          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/lig3.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <p>CancerBiology</p>
+                  <a href="assets/img/portfolio/lig3.jpg" title="" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://doi.org/10.1101/2025.02.22.639676" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/antioxidant.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <p>Phytomedicine Plus</p>
+                  <a href="assets/img/portfolio/antioxidant.jpg" title="" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://doi.org/10.1016/j.phyplu.2025.100777" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/denv.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <p>ChemistrySelect</p>
+                  <a href="assets/img/portfolio/denv.jpg" title="" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://doi.org/10.1002/slct.202404053" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+            
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
+              <div class="portfolio-content h-100">
+                <img src="https://placehold.co/850x540" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <p>Food and Chemical Toxicology</p>
+                  <a href="https://placehold.co/850x540" title="" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/verapamil.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <p>Informatics in Medicine Unlocked</p>
+                  <a href="assets/img/portfolio/verapamil.jpg" title="Branding 1" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://doi.org/10.1016/j.imu.2024.101493" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/amazon.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <p>ChemistrySelect</p>
+                  <a href="assets/img/portfolio/amazon.jpg" title="" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://doi.org/10.1002/slct.202303557" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+
+          </div><!-- End Portfolio Container -->
+
         </div>
+
+      </div>
+
+    </section><!-- /Portfolio Section -->
+
+    <!-- Services Section -->
+    <section id="experience" class="services section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Experience</h2>
         
-        <div  class="col-md-10 col-md-offset-1 "> <img src="images/Testimonials/03.jpg" class="img-circle" alt="">
-          <h5>Very proactive in seeking research opportunities and gaining technical skills. Shows leadership and enthusiasm in both academic and collaborative environments.</h5>
-          <h6>FAISAL AMIN ANIK</h6>
-          <p>MS at UTRGV, TX, USA</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon flex-shrink-0"><i class="bi bi-leaf"></i></div>
+            <div>
+              <h4 class="title"><a href="service-details.html" class="stretched-link">Chemical Extraction and Isolation</a></h4>
+              <p class="description">Executed phytochemical extraction using solvents and chromatographic methods to isolate bioactive compounds from medicinal plants.</p>
+            </div>
+          </div>
+          <!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon flex-shrink-0"><i class="bi bi-laptop"></i></div>
+            <div>
+              <h4 class="title"><a href="service-details.html" class="stretched-link">Computer Aided Drug Design</a></h4>
+              <p class="description">Performed molecular modeling and docking studies using software tools to identify potential drug candidates and optimize lead compounds.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon flex-shrink-0"><i class="bi bi-capsule"></i></div>
+            <div>
+              <h4 class="title"><a href="service-details.html" class="stretched-link">Drug Development</a></h4>
+              <p class="description">Gained hands-on experience in preclinical phases, including formulation, pharmacokinetics, and evaluating drug safety and efficacy parameters.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="400">
+            <div class="icon flex-shrink-0"><i class="bi bi-binoculars"></i></div>
+            <div>
+              <h4 class="title"><a href="service-details.html" class="stretched-link">In-Vivo Experiment</a></h4>
+              <p class="description">Conducted animal studies for pharmacological testing, including dose administration, monitoring, and ethical handling of laboratory animals.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="500">
+            <div class="icon flex-shrink-0"><i class="bi bi-bar-chart"></i></i></div>
+            <div>
+              <h4 class="title"><a href="service-details.html" class="stretched-link">Data Analysis</a></h4>
+              <p class="description">Experienced in analyzing biological and pharmaceutical datasets using statistical tools. Skilled in data cleaning, visualization, and interpretation to extract meaningful insights and support research findings.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="600">
+            <div class="icon flex-shrink-0"><i class="bi bi-code"></i></div>
+            <div>
+              <h4 class="title"><a href="service-details.html" class="stretched-link">Programming</a></h4>
+              <p class="description">Proficient in Python and R for scientific computing, bioinformatics, and automation. Developed scripts for data processing, visualization, and algorithm-based solutions in pharmaceutical research projects.</p>
+            </div>
+          </div><!-- End Service Item -->
+
         </div>
-        <div  class="col-md-10 col-md-offset-1"> <img src="images/Testimonials/02.jpg" class="img-circle" alt="">
-          <h5>Displays genuine passion for pharmaceutical research. Technically sound and intellectually curious—well-prepared for higher studies or competitive research roles.</h5>
-          <h6>AKAYED HASAN</h6>
-          <p>PhD at Virginia University, NY, USA</p>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Testimonials</h2>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              },
+              "breakpoints": {
+                "320": {
+                  "slidesPerView": 1,
+                  "spaceBetween": 40
+                },
+                "1200": {
+                  "slidesPerView": 3,
+                  "spaceBetween": 1
+                }
+              }
+            }
+          </script>
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>An exceptionally dedicated student with strong research aptitude. Shows excellent skills in computational drug design and academic writing. Highly recommended for advanced studies.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                <h3>Dr. Nurul Islam</h3>
+                <h4>Associate Professor, Department of Pharmacy, MBSTU, Bangladesh</h4>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Demonstrates deep curiosity and consistent effort in experimental and theoretical pharmacy research. A reliable and insightful contributor to any scientific team.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                <h3>Faria Farzana Perveen</h3>
+                <h4>Associate Professor, Department of Pharmacy, MBSTU, Bangladesh</h4>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Possesses strong laboratory skills and keen scientific understanding. Always eager to learn and contribute meaningfully to group projects and discussions.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                <h3>Mahfuza Akter</h3>
+                <h4>Lecturer, Department of Pharmacy, MBSTU, Bangladesh</h4>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>A promising young researcher with a solid foundation in pharmaceutical sciences and a growing interest in translational research. Highly driven and focused.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                <h3>Nasim Ahmed</h3>
+                <h4>PhD at Wayne State University, MI, USA</h4>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Very proactive in seeking research opportunities and gaining technical skills. Shows leadership and enthusiasm in both academic and collaborative environments.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                <h3>Faisal Amin Anik</h3>
+                <h4>MS at UTRGV, TX, USA</h4>
+              </div>
+            </div><!-- End testimonial item -->
+
+          </div>
+          <div class="swiper-pagination"></div>
         </div>
+
       </div>
-    </div>
-  </div>
-</section>
-<!--Fun-Facts-Section-Start-->
-<section id="fun-facts">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-6 col-md-3">
-        <div class="fun-fact text-center">
-          <h3><i class="fa fa-thumbs-o-up"></i> <span class="timer">36</span></h3>
-          <h6>Colaboration</h6>
+
+    </section><!-- /Testimonials Section -->
+    <!-- Stats Section -->
+    <section id="stats" class="stats section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item">
+              <i class="bi bi-emoji-smile"></i>
+              <span data-purecounter-start="0" data-purecounter-end="36" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Colaboration</strong></p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item">
+              <i class="bi bi-journal-richtext"></i>
+              <span data-purecounter-start="0" data-purecounter-end="7" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Published Papers</strong></p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item">
+              <i class="bi bi-headset"></i>
+              <span data-purecounter-start="0" data-purecounter-end="297" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Cups of Coffee</strong></p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item">
+              <i class="bi bi-people"></i>
+              <span data-purecounter-start="0" data-purecounter-end="398" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Hours of Lab work</strong></p>
+            </div>
+          </div><!-- End Stats Item -->
+
         </div>
+
       </div>
-      <div class="col-sm-6 col-md-3">
-        <div class="fun-fact text-center">
-          <h3><i class="fa fa-briefcase fa-6"></i> <span class="timer">7</span></h3>
-          <h6>Published Papers</h6>
+
+    </section><!-- /Stats Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact</h2>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-5">
+
+            <div class="info-wrap">
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                <div>
+                  <h3>Address</h3>
+                  <p>Boardbazar, Gazipur City Corporation, Gazipur </p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+                <i class="bi bi-telephone flex-shrink-0"></i>
+                <div>
+                  <h3>Cell</h3>
+                  <p>+880 199723****</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+                <i class="bi bi-envelope flex-shrink-0"></i>
+                <div>
+                  <h3>Email</h3>
+                  <p>mdsabbirahmed25@gmail.com</p>
+                </div>
+              </div><!-- End Info Item -->
+            
+
+              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3066.285183729665!2d90.38288868307869!3d23.944587713320896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1747993146756!5m2!1sen!2sbd" frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+              <div class="row gy-4">
+
+                <div class="col-md-6">
+                  <label for="name-field" class="pb-2">Your Name</label>
+                  <input type="text" name="name" id="cf-name" class="form-control" required="">
+                </div>
+
+                <div class="col-md-6">
+                  <label for="email-field" class="pb-2">Your Email</label>
+                  <input type="email" class="form-control" name="email" id="cf-email" required="">
+                </div>
+
+                <div class="col-md-12">
+                  <label for="message-field" class="pb-2">Message</label>
+                  <textarea class="form-control" name="message" rows="10" id="cf-message" required=""></textarea>
+                </div>
+
+                <div class="col-md-12 text-center">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
+                  
+                  <div id="thankYouMessage" style="display: none;">Thank you, your message has been sent.</div>
+                  
+                  <button type="submit" id="cf-btn">Send Message</button>
+                </div>
+
+              </div>
+            </form>
+            
+
+        <script>
+          const emailf = document.getElementById('cf-email');
+          const namef = document.getElementById('cf-name');
+          const msgf = document.getElementById('cf-message');
+          const cfbtn = document.getElementById('cf-btn');
+
+          cfbtn.addEventListener('click', () => {
+            const email = emailf.value;
+            const name = namef.value;
+            const msg = msgf.value;
+            
+          if (email && name) {
+              cfbtn.disabled = true;
+
+              const googleFormURL = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSe5pz0X922sN8zN6K5aRFbHvPl31oS9sNHeJWkwDXxLhA8_hw/formResponse';
+              const formData = new URLSearchParams();
+              formData.append('entry.1309446195', name);
+              formData.append('entry.384813882', email);
+              formData.append('entry.1431221425', msg);
+
+              fetch(googleFormURL, {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors',
+              }).then(() => {
+                thankYouMessage.style.display = 'block';
+              }).catch(() => {
+                cfbtn.disabled = false;
+              });
+            } else {
+              alert('Please enter your email and transaction ID.');
+            }
+          });
+        </script>
+          </div><!-- End Contact Form -->
+
         </div>
+
       </div>
-      <div class="col-sm-6 col-md-3">
-        <div class="fun-fact text-center">
-          <h3><i class="fa fa-coffee"></i> <span class="timer">297</span></h3>
-          <h6>Cups of Coffee</h6>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-3">
-        <div class="fun-fact text-center">
-          <h3><i class="fa fa-code"></i> <span class="timer">398</span></h3>
-          <h6>Hours of Lab work</h6>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!--Client-Section-Start-->
-<div id="client">
-  <div class="container">
-    <div id="client-slider" class="owl-carousel">
-      
-      <div class="item client-logo"> <a href="#"><img src="images/clients/desmond.png" class="img-responsive" alt=""/></a> </div>
-      <div class="item client-logo"> <a href="#"><img src="images/clients/cytoscape.png" class="img-responsive" alt=""/></a> </div>
-      <div class="item client-logo"> <a href="#"><img src="images/clients/gro.png" class="img-responsive" alt=""/></a> </div>
-      <div class="item client-logo"> <a href="#"><img src="images/clients/gaus.png" class="img-responsive" alt=""/></a> </div>
-      <div class="item client-logo"> <a href="#"><img src="images/clients/pyrx.png" class="img-responsive" alt=""/></a> </div>
-      <div class="item client-logo"> <a href="#"><img src="images/clients/dsv.png" class="img-responsive" alt=""/></a> </div>
-      <div class="item client-logo"> <a href="#"><img src="images/clients/4.png" class="img-responsive" alt=""/></a> </div>
-    </div>
-  </div>
-</div>
+    </section><!-- /Contact Section -->
 
-<div class="bg-sec">
-  <div class="container">
-    <div class="col-md-10 col-sm-10 col-xs-8">
-    </div>
-  </div>
-</div>
-<!--Contact-Section-Start-->
-<section id="contact">
-  <div class="container">
-    <div class="col-md-8 col-md-offset-2">
-      <div class="heading">
-        <h2>CONTACT <span>ME</span></h2>
-        <div class="line"></div><p></p>
-      </div>
-    </div>
-    <div class="text-center">
-      <div class="col-md-6 col-sm-6 contact-sec-1">
-        <h4>CONTACT IN<span>FO</span></h4>
-        <ul class="contact-form">
-          <li><i class="fa fa-map-marker"></i>
-            <h6><strong>Address:</strong> Boardbazar, Gazipur City Corporation, Gazipur </h6>
-          </li>
-          <li><i class="fa fa-envelope"></i>
-            <h6><strong>Mail Me:</strong> <a href="#">mdsabbirahmed25@gmail.com</a></h6>
-          </li>
-          <li><i class="fa fa-phone"></i>
-            <h6><strong>Phone:</strong> +880199723**** </h6>
-          </li>
-          <li><i class="fa fa-wechat"></i>
-            <h6><strong>Website:</strong> <a href="">https://sabbir-21.github.io/portfolio/</a> </h6>
-          </li>
-        </ul>
-      </div>
-      <div class="col-md-6 col-sm-6">
-        <!-- Custom Contact Form (to replace your current Google Form) -->
-<form id="cf-contact-form" method="POST">
-    <!-- Name Field -->
-    <div class="cf-form-group">
-      <label for="cf-name" class="cf-form-label">Name</label>
-      <input
-        type="text"
-        id="cf-name"
-        name="name"
-        class="cf-form-input"
-        placeholder="Your full name"
-        required
-      />
-    </div>
+  </main>
 
-    <!-- Email Field -->
-    <div class="cf-form-group">
-      <label for="cf-email" class="cf-form-label">Email</label>
-      <input
-        type="email"
-        id="cf-email"
-        name="email"
-        class="cf-form-input"
-        placeholder="Your email address"
-        required
-      />
-    </div>
+  <footer id="footer" class="footer position-relative light-background">
 
-    <!-- Message Field -->
-    <div class="cf-form-group">
-      <label for="cf-message" class="cf-form-label">Message</label>
-      <textarea
-        id="cf-message"
-        name="message"
-        class="cf-form-textarea"
-        placeholder="Type your message here..."
-        required
-      ></textarea>
-    </div>
-
-    <!-- Submit Button -->
-    <button type="button" class="cf-submit-button" id="cf-btn">
-      Send Message
-    </button>
-  </form>
-
-  <div id="thankYouMessage" style="display: none;">Thank you, your message has been sent.</div>
-
-  <script>
-    const emailf = document.getElementById('cf-email');
-    const namef = document.getElementById('cf-name');
-    const msgf = document.getElementById('cf-message');
-    const cfbtn = document.getElementById('cf-btn');
-
-    cfbtn.addEventListener('click', () => {
-      const email = emailf.value;
-      const name = namef.value;
-      const msg = msgf.value;
-      
-    if (email && name) {
-        cfbtn.disabled = true;
-
-        const googleFormURL = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSe5pz0X922sN8zN6K5aRFbHvPl31oS9sNHeJWkwDXxLhA8_hw/formResponse';
-        const formData = new URLSearchParams();
-        formData.append('entry.1309446195', name);
-        formData.append('entry.384813882', email);
-        formData.append('entry.1431221425', msg);
-
-        fetch(googleFormURL, {
-          method: 'POST',
-          body: formData,
-          mode: 'no-cors',
-        }).then(() => {
-          thankYouMessage.style.display = 'block';
-        }).catch(() => {
-          cfbtn.disabled = false;
-        });
-      } else {
-        alert('Please enter your email and transaction ID.');
-      }
-    });
-  </script>
-      </div>
-    </div>
-  </div>
-</section>
-<footer id="footer">
-  <div class="bg-sec">
     <div class="container">
-      <h2>LOOKING FORWARD TO <strong>HEARING </strong>FROM YOU!</h2>
+      <div class="copyright text-center ">
+        <p> &copy; Copyright 2025 <a href="http://facebook.com/sabbir299" target="_blank"><strong class="px-1 sitename">Sabbir Ahmed</strong></a> </p>
+      </div>
     </div>
-  </div>
-</footer>
-<footer id="footer-down">
-  <h2>Follow Me On</h2>
-  <ul class="social-icon">
-    <li class="facebook hvr-pulse"><a href="https://www.facebook.com/sabbir299" target="_blank"><i class="fa fa-facebook-f"></i></a></li>
-    <li class="linkedin hvr-pulse"><a href="https://www.linkedin.com/in/sabbir-ahmed-256438190" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-    <li class="twitter hvr-pulse"><a href="https://twitter.com/SabbirA58223088" target="_blank"><i class="fa fa-twitter"></i></a></li>
-    <li class="instagram hvr-pulse"><a href="https://www.instagram.com/_sabbir21/" target="_blank"><i class="fa fa-instagram"></i></a></li>
-    <li class="hvr-pulse"><a href="https://www.researchgate.net/profile/Sabbir-Ahmed-65" target="_blank"><img src="https://c5.rgstatic.net/m/4380572179316878/images/favicon/favicon.ico"></a></li>
-    <li class="hvr-pulse"><a href="https://orcid.org/my-orcid?orcid=0009-0009-8621-5881" target="_blank"><img src="https://orcid.org/assets/icons/favicon.ico"></a></li>
-  </ul>
-  <p> &copy; Copyright 2025 <a href="http://facebook.com/sabbir299" target="_blank">Sabbir Ahmed</a> </p>
-</footer>
-<i id="scrollToTopBtn" class="fa fa-chevron-up"></i>
 
-<!--Jquery-->
-<script type="text/javascript" src="js/jquery.min.js"></script>
+  </footer>
 
-<script type="text/javascript">
-  $('.navbar-nav>li>a').on('click', function(){
-    $('.navbar-collapse').collapse('hide');
-});
-  $(function() {
-  $(document).click(function (event) {
-    $('.navbar-collapse').collapse('hide');
-  });
-});
-</script>
-<script>
-  // Get the button
-  var scrollToTopBtn = document.getElementById("scrollToTopBtn");
-  // When the user scrolls down 20px from the top of the document, show the button
-  window.onscroll = function() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-      scrollToTopBtn.style.display = "block";
-    } else {
-      scrollToTopBtn.style.display = "none";
-    }
-  };
-  // When the user clicks on the button, scroll to the top of the document
-  scrollToTopBtn.onclick = function() {
-    window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
-  };
-  
-  </script>
-<!--Boostrap-Jquery-->
-<script type="text/javascript" src="js/bootstrap.js"></script>
-<!--Preetyphoto-Jquery-->
-<script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
-<!--NiceScroll-Jquery-->
-<script type="text/javascript" src="js/jquery.nicescroll.js"></script>
-<script type="text/javascript" src="js/waypoints.min.js"></script>
-<!--Isotopes-->
-<script type="text/javascript" src="js/jquery.isotope.js"></script>
-<!--Wow-Jquery-->
-<script type="text/javascript" src="js/wow.js"></script>
-<!--Count-Jquey-->
-<script type="text/javascript" src="js/jquery.countTo.js"></script>
-<script type="text/javascript" src="js/jquery.inview.min.js"></script>
-<!--Owl-Crousels-Jqury-->
-<script type="text/javascript" src="js/owl.carousel.js"></script>
-<!--Main-Scripts-->
-<script type="text/javascript" src="js/script.js"></script>
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
 </body>
+
 </html>
