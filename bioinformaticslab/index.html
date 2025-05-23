@@ -66,6 +66,7 @@
     const transactionField = document.getElementById('transaction');
     const promoCodeField = document.getElementById('promoCode');
 
+
     slider.addEventListener('input', updatePrice);
     simulationTime.addEventListener('change', updatePrice);
     mmgbsaCheckbox.addEventListener('change', updatePrice);
@@ -115,6 +116,9 @@
       const nsValue = simulationTime.value;
       const mmgbsa = mmgbsaCheckbox.checked ? "Yes" : "No";
       const dft = dftCheckbox.checked ? "Yes" : "No";
+      const currentDate = new Date('2025-05-23T01:10:00+06:00');
+      const invoiceNumber = currentDate.toISOString().replace(/[-:T.]/g, '').slice(0, 12); // e.g., 230520250110
+      const formattedDate = currentDate.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
 
       if (email && transaction) {
         orderButton.disabled = true;
@@ -143,6 +147,8 @@
               nsValue,
               mmgbsa,
               dft,
+              invoiceNumber,
+              formattedDate,
             });
         }).catch(() => {
           orderButton.disabled = false;
@@ -156,21 +162,99 @@
       const container = document.querySelector('.container');
       
       container.innerHTML = 
-        `<div id="thankYouSection" class="invoice-card">
-          <h1>Thank You for Your Order!</h1>
-          <p>Your order details are as follows:</p>
-          <ul>
-            <li><strong>Email:</strong> ${orderInfo.email}</li>
-            <li><strong>Price:</strong> ${orderInfo.price} Taka</li>
-            <li><strong>Transaction ID:</strong> ${orderInfo.transaction}</li>
-            <li><strong>Estimated Time:</strong> ${orderInfo.days} day(s)</li>
-            <li><strong>Number of Complexes:</strong> ${orderInfo.numComplexes}</li>
-            <li><strong>Simulation Time:</strong> ${orderInfo.nsValue} ns</li>
-            <li><strong>MMGBSA:</strong> ${orderInfo.mmgbsa}</li>
-            <li><strong>DFT:</strong> ${orderInfo.dft}</li>
-          </ul>
-          <button class="orderButtonStyle" id="downloadInvoiceButton">Download Your Invoice</button>
-        </div>`;
+        `<div class="invoice-box">
+			<table cellpadding="0" cellspacing="0">
+				<tr class="top">
+					<td colspan="2">
+						<table>
+							<tr>
+								<td class="title">
+									<text>Bioinformatics Lab</text>
+								</td>
+
+								<td>
+									Invoice #: ${orderInfo.invoiceNumber}<br/>
+									Date: ${orderInfo.formattedDate}
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+
+				<tr class="information">
+					<td colspan="2">
+						<table>
+							<tr>
+								<td>
+									Bioinformatics Lab, Inc.<br />
+									RTX 4080<br />
+									Schrodinger Suits, CA
+								</td>
+
+								<td>
+									E-mail:	${orderInfo.email}
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+
+        <tr><td align="center" colspan="2">
+          <text style="font-size: large;">Your order details are as follows:</text>
+        </td></tr>
+        <tr class="heading">
+					<td>Payment Information</td>
+
+					<td></td>
+				</tr>
+
+				<tr class="details">
+					<td>Transaction ID</td>
+
+					<td>${orderInfo.transaction}</td>
+				</tr>
+        <tr class="details">
+          <td>Estimated Time:</td>
+
+					<td>${orderInfo.days} day(s)</td>
+				</tr>
+
+				<tr class="heading">
+					<td>Item</td>
+
+					<td>Price</td>
+				</tr>
+
+				<tr class="item">
+					<td>Number of Complexes:</td>
+
+					<td>${orderInfo.numComplexes}</td>
+				</tr>
+
+				<tr class="item">
+					<td>Simulation Time:</td>
+
+					<td>${orderInfo.nsValue} ns</td>
+				</tr>
+				<tr class="item">
+					<td>MMGBSA:</td>
+
+					<td>${orderInfo.mmgbsa}</td>
+				</tr>
+				<tr class="item last">
+					<td>DFT:</td>
+
+					<td>${orderInfo.dft}</td>
+				</tr>
+				
+				<tr class="total">
+					<td></td>
+
+					<td>Total: &#2547; ${orderInfo.price}</td>
+				</tr>
+			</table>
+      <button class="orderButtonStyle" id="downloadInvoiceButton">Download Your Invoice</button>
+		</div>`;
 
       const downloadInvoiceButton = document.getElementById('downloadInvoiceButton');
       downloadInvoiceButton.addEventListener('click', () => {
