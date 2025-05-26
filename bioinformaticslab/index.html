@@ -26,10 +26,10 @@
         <option value="1000">1000ns</option>
       </select>
 <div class="checkbox-wrapper-2">
-      <label class="check-box"><input type="checkbox" id="mmgbsaCheckbox"> Calculate MMGBSA (+200৳/complex)</label>
-      <label><input type="checkbox" id="dftCheckbox"> Calculate DFT (+500৳/complex)</label></div>
+      <label class="check-box"><input type="checkbox" id="mmgbsaCheckbox"> Calculate MMGBSA (+400৳/complex)</label>
+      <label><input type="checkbox" id="dftCheckbox"> Calculate DFT (+1000৳/complex)</label></div>
 
-      <h2>Total Price: <span id="originalPrice" style="text-decoration: line-through; display: none;"></span> <span id="finalPrice">1500</span> Taka <span id="discountBadge" style="display: none; background-color: #ffd700; padding: 5px; border-radius: 5px; margin-left: 10px;">33% OFF!</span></h2>
+      <h2>Total Price: <span id="originalPrice" style="text-decoration: line-through; display: none;"></span> <span id="finalPrice">1500</span> Taka <span id="discountBadge" style="display: none; background-color: #ffd700; padding: 5px; border-radius: 5px; margin-left: 10px;"></span></h2> <!--33% OFF!-->
       <h3>Estimated Time: <span id="daysDisplay">0</span> Day(s)</h3>
 
       <button class="orderButtonStyle" type="button" id="payButton">Pay Now</button>
@@ -76,26 +76,35 @@
     function updatePrice() {
       const numComplexes = parseInt(slider.value);
       const nsValue = parseInt(simulationTime.value);
-      let basePrice = numComplexes * (nsValue / 100) * 1500;
+      let basePrice = numComplexes * (nsValue / 100) * 2000;
 
       if (mmgbsaCheckbox.checked) {
-        basePrice += numComplexes * 200;
+        basePrice += numComplexes * 400;
       }
       
       if (dftCheckbox.checked) {
-        basePrice += numComplexes * 500;
+        basePrice += numComplexes * 1000;
       }
 
       const promoCode = promoCodeField.value;
       let finalPriceValue = basePrice;
       if (promoCode === "SABBIR") {
-        const discountedPrice = basePrice * (1 - 0.33333333);
-        originalPrice.textContent = basePrice;
-        originalPrice.style.display = 'inline';
-        finalPrice.textContent = Math.round(discountedPrice);
-        discountBadge.style.display = 'inline';
-        finalPriceValue = Math.round(discountedPrice);
-      } else {
+          const discountedPrice = basePrice * (1 - 0.33333333);
+          originalPrice.textContent = basePrice;
+          originalPrice.style.display = 'inline';
+          finalPrice.textContent = Math.round(discountedPrice);
+          discountBadge.textContent = "33% OFF!";
+          discountBadge.style.display = 'inline';
+          finalPriceValue = Math.round(discountedPrice);
+        } else if (promoCode === "MBSTU") {
+          const discountedPrice = basePrice * 0.75;
+          originalPrice.textContent = basePrice;
+          originalPrice.style.display = 'inline';
+          finalPrice.textContent = Math.round(discountedPrice);
+          discountBadge.textContent = "25% OFF!";
+          discountBadge.style.display = 'inline';
+          finalPriceValue = Math.round(discountedPrice);
+        } else {
         originalPrice.style.display = 'none';
         finalPrice.textContent = basePrice;
         discountBadge.style.display = 'none';
@@ -126,6 +135,7 @@
         const googleFormURL = 'https://docs.google.com/forms/d/e/1FAIpQLSdPSJ7iugjdoNI50RACxP3p0n23CZhzailXVBCgQ81AlneFYg/formResponse';
         const formData = new URLSearchParams();
         formData.append('entry.267273701', email);
+        formData.append('entry.1746592776', invoiceNumber);
         formData.append('entry.1369750810', transaction);
         formData.append('entry.1374397848', price);
         formData.append('entry.1240618803', numComplexes);
