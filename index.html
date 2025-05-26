@@ -53,7 +53,7 @@
       }
     });
   </script>
-
+<base target="_blank">
 
 </head>
 
@@ -710,7 +710,8 @@
               }).then(() => {
                 thankYouMessage.style.display = 'block';
               }).catch(() => {
-                cfbtn.disabled = false;
+                console.log("Button Disabled");
+                //cfbtn.disabled = false;
               });
             } else {
               alert('Please enter your email and transaction ID.');

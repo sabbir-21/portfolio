@@ -40,6 +40,8 @@
           <span style="justify-content: center; display: flex;">01997236316</span>
       </div>
 
+      <label for="fname">Name:</label>
+      <input type="text" id="fname" placeholder="Enter your name" required>
       <label for="email">Email:</label>
       <input type="email" id="email" placeholder="Enter your email" required>
       <label for="transaction">Transaction ID:</label>
@@ -63,6 +65,7 @@
     const daysDisplay = document.getElementById('daysDisplay');
     const orderButton = document.getElementById('orderButton');
     const emailField = document.getElementById('email');
+    const nameField = document.getElementById('fname');
     const transactionField = document.getElementById('transaction');
     const promoCodeField = document.getElementById('promoCode');
 
@@ -87,8 +90,10 @@
       }
 
       const promoCode = promoCodeField.value;
+      const dd = atob("U0FCQklS");
+      const de = atob("TUJTVFU=");
       let finalPriceValue = basePrice;
-      if (promoCode === "SABBIR") {
+      if (promoCode === dd) {
           const discountedPrice = basePrice * (1 - 0.33333333);
           originalPrice.textContent = basePrice;
           originalPrice.style.display = 'inline';
@@ -96,7 +101,7 @@
           discountBadge.textContent = "33% OFF!";
           discountBadge.style.display = 'inline';
           finalPriceValue = Math.round(discountedPrice);
-        } else if (promoCode === "MBSTU") {
+        } else if (promoCode === de) {
           const discountedPrice = basePrice * 0.75;
           originalPrice.textContent = basePrice;
           originalPrice.style.display = 'inline';
@@ -118,6 +123,7 @@
 
     orderButton.addEventListener('click', () => {
       const email = emailField.value;
+      const ffname = nameField.value;
       const transaction = transactionField.value;
       const price = finalPrice.textContent;
       const days = daysDisplay.textContent;
@@ -125,16 +131,17 @@
       const nsValue = simulationTime.value;
       const mmgbsa = mmgbsaCheckbox.checked ? "Yes" : "No";
       const dft = dftCheckbox.checked ? "Yes" : "No";
-      const currentDate = new Date('2025-05-23T01:10:00+06:00');
-      const invoiceNumber = currentDate.toISOString().replace(/[-:T.]/g, '').slice(0, 12); // e.g., 230520250110
+      const currentDate = new Date();
+      const invoiceNumber = currentDate.toISOString().replace(/[-:T.]/g, '').slice(0, 14);
       const formattedDate = currentDate.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
 
       if (email && transaction) {
         orderButton.disabled = true;
 
-        const googleFormURL = 'https://docs.google.com/forms/d/e/1FAIpQLSdPSJ7iugjdoNI50RACxP3p0n23CZhzailXVBCgQ81AlneFYg/formResponse';
+        const gForm = atob("aHR0cHM6Ly9kb2NzLmdvb2dsZS5jb20vZm9ybXMvZC9lLzFGQUlwUUxTZFBTSjdpdWdqZG9OSTUwUkFDeFAzcDBuMjNDWmh6YWlsWFZCQ2dRODFBbG5lRllnL2Zvcm1SZXNwb25zZQ==");
         const formData = new URLSearchParams();
         formData.append('entry.267273701', email);
+        formData.append('entry.1164144607', ffname);
         formData.append('entry.1746592776', invoiceNumber);
         formData.append('entry.1369750810', transaction);
         formData.append('entry.1374397848', price);
@@ -143,13 +150,14 @@
         formData.append('entry.1734846573', mmgbsa);
         formData.append('entry.101306927', dft);
 
-        fetch(googleFormURL, {
+        fetch(gForm, {
           method: 'POST',
           body: formData,
           mode: 'no-cors',
         }).then(() => {
             displayThankYouMessage({
               email,
+              ffname,
               transaction,
               price,
               days,
@@ -183,8 +191,8 @@
 								</td>
 
 								<td>
-									Invoice #: ${orderInfo.invoiceNumber}<br/>
-									Date: ${orderInfo.formattedDate}
+									<b>Invoice #:</b> ${orderInfo.invoiceNumber}<br/>
+									<b>Date:</b> ${orderInfo.formattedDate}
 								</td>
 							</tr>
 						</table>
@@ -202,7 +210,8 @@
 								</td>
 
 								<td>
-									E-mail:	${orderInfo.email}
+                  <b>Name:</b>	${orderInfo.ffname}<br>
+									<b>E-mail:</b>	${orderInfo.email}
 								</td>
 							</tr>
 						</table>
