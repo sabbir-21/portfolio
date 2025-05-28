@@ -67,29 +67,38 @@
     </div>
 
     <a href="index.html" class="logo d-flex align-items-center justify-content-center">
-      <!-- Uncomment the line below if you also wish to use an image logo -->
-      <!-- <img src="assets/img/logo.png" alt=""> -->
       <h1 class="sitename">Sabbir Ahmed</h1>
     </a>
 
     <div class="social-links text-center">
-      
-      <a href="https://www.facebook.com/sabbir299" class="facebook"><i class="bi bi-facebook"></i></a>
-      <a href="https://www.linkedin.com/in/sabbir-ahmed-256438190" class="linkedin"><i class="bi bi-linkedin"></i></a>
-      <a href="https://twitter.com/SabbirA58223088" class="twitter"><i class="bi bi-twitter-x"></i></a>
-      <a href="https://www.instagram.com/_sabbir21/" class="instagram"><i class="bi bi-instagram"></i></a>
-      
+
+<a href="https://www.facebook.com/sabbir299">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" style="width: 1em; height: 1em; vertical-align: middle;">
+</a>
+
+<a href="https://www.linkedin.com/in/sabbir-ahmed-256438190">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" alt="LinkedIn" style="width: 1em; height: 1em; vertical-align: middle;">
+</a>
+
+
+<a href="https://www.researchgate.net/profile/Sabbir-Ahmed-65">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/ResearchGate_icon_SVG.svg" alt="ResearchGate" style="width: 1em; height: 1em; vertical-align: middle;">
+</a>
+
+<a href="https://orcid.org/my-orcid?orcid=0009-0009-8621-5881">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/0/06/ORCID_iD.svg" alt="ORCID" style="width: 1em; height: 1em; vertical-align: middle;">
+</a>
       
     </div>
 
     <nav id="navmenu" class="navmenu">
       <ul>
-        <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
-        <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
-        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
-        <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
-        <li><a href="#experience"><i class="bi bi-hdd-stack navicon"></i> Experience</a></li>
-        <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+        <li><a href="#hero" class="active" target="_self"><i class="bi bi-house navicon"></i>Home</a></li>
+        <li><a href="#about" target="_self"><i class="bi bi-person navicon"></i> About</a></li>
+        <li><a href="#resume" target="_self"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
+        <li><a href="#portfolio" target="_self"><i class="bi bi-images navicon"></i> Portfolio</a></li>
+        <li><a href="#experience" target="_self"><i class="bi bi-hdd-stack navicon"></i> Experience</a></li>
+        <li><a href="#contact" target="_self"><i class="bi bi-envelope navicon"></i> Contact</a></li>
       </ul>
     </nav>
 
@@ -103,12 +112,12 @@
 
       <img src="assets/img/microbiologylab.jpg" alt="Microbiologylab">
       <img src="assets/img/rotary2.jpg" alt="Rotary Evaporator">
-      <img src="assets/img/sa_center.jpg" alt="MBSTU">
       <img src="assets/img/rotary.jpg" alt="Rotary Evaporator">
+      <img src="assets/img/sa_center.jpg" alt="MBSTU">
       
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <h2>Sabbir Ahmed</h2>
-        <p>A <span class="typed" data-typed-items="Researcher, Consultant, Pharmacist, Programmer"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+        <p>A <span class="typed" data-typed-items="Researcher, Pharmacist, Consultant, Programmer"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
       </div>
       <script>
         const heroImages = document.querySelectorAll('#hero img');
@@ -120,7 +129,7 @@
           heroImages[currentHeroIndex].style.display = 'none';
           currentHeroIndex = (currentHeroIndex + 1) % heroImages.length;
           heroImages[currentHeroIndex].style.display = '';
-        }, 3500);
+        }, 4550);
       </script>
 
     </section><!-- /Hero Section -->
@@ -131,7 +140,7 @@
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>About</h2>
-        <p>Sabbir Ahmed is a multifaceted professional excelling in pharmacotherapy, biopharmaceutics, and software development. As a pharmacist, he specializes in medication management and clinical pharmacology, ensuring patient safety and optimizing drug therapies. In his research, Sabbir delves into bioinformatics and molecular biology, exploring drug delivery systems and personalized medicine. His proficiency in Python and R enables him to develop innovative solutions and analyze big data, bridging the gap between healthcare and technology for better health outcomes.</p>
+        <p>Sabbir Ahmed is a multifaceted professional excelling in pharmacology, biopharmaceutics, and software development. As a pharmacist, he specializes in medication management and clinical pharmacology, ensuring patient safety and optimizing drug therapies. In his research, Sabbir delves into bioinformatics and molecular biology, exploring drug delivery systems and personalized medicine. His proficiency in Python and R enables him to develop innovative solutions and analyze big data, bridging the gap between healthcare and technology for better health outcomes.</p>
       </div><!-- End Section Title -->
 
     </section><!-- /About Section -->
@@ -465,7 +474,7 @@
           <script type="application/json" class="swiper-config">
             {
               "loop": true,
-              "speed": 600,
+              "speed": 900,
               "autoplay": {
                 "delay": 5000
               },
@@ -496,9 +505,9 @@
                   <span>An exceptionally dedicated student with strong research aptitude. Shows excellent skills in computational drug design and academic writing. Highly recommended for advanced studies.</span>
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
-                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                <img src="assets/img/testimonials/nurul.jpg" class="testimonial-img" alt="">
                 <h3>Dr. Nurul Islam</h3>
-                <h4>Associate Professor, Department of Pharmacy, MBSTU, Bangladesh</h4>
+                <h4>Postdoctoral Fellow, Mercer University, Macon, GA, USA</h4>
               </div>
             </div><!-- End testimonial item -->
 
@@ -509,7 +518,7 @@
                   <span>Demonstrates deep curiosity and consistent effort in experimental and theoretical pharmacy research. A reliable and insightful contributor to any scientific team.</span>
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
-                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                <img src="assets/img/testimonials/faria.jpg" class="testimonial-img" alt="">
                 <h3>Faria Farzana Perveen</h3>
                 <h4>Associate Professor, Department of Pharmacy, MBSTU, Bangladesh</h4>
               </div>
@@ -522,7 +531,7 @@
                   <span>Possesses strong laboratory skills and keen scientific understanding. Always eager to learn and contribute meaningfully to group projects and discussions.</span>
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
-                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                <img src="assets/img/testimonials/mahfuza.jpg" class="testimonial-img" alt="">
                 <h3>Mahfuza Akter</h3>
                 <h4>Lecturer, Department of Pharmacy, MBSTU, Bangladesh</h4>
               </div>
@@ -535,7 +544,7 @@
                   <span>A promising young researcher with a solid foundation in pharmaceutical sciences and a growing interest in translational research. Highly driven and focused.</span>
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
-                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                <img src="assets/img/testimonials/nasim.jpg" class="testimonial-img" alt="">
                 <h3>Nasim Ahmed</h3>
                 <h4>PhD at Wayne State University, MI, USA</h4>
               </div>
@@ -548,7 +557,7 @@
                   <span>Very proactive in seeking research opportunities and gaining technical skills. Shows leadership and enthusiasm in both academic and collaborative environments.</span>
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
-                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                <img src="assets/img/testimonials/anik.jpg" class="testimonial-img" alt="">
                 <h3>Faisal Amin Anik</h3>
                 <h4>MS at UTRGV, TX, USA</h4>
               </div>
