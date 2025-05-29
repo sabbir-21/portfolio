@@ -6,6 +6,27 @@
   <meta name="robots" content="noindex, nofollow">
   <title>Bioinformatics Lab Order</title>
   <link rel="stylesheet" href="style.css">
+    <style>
+    body {
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+    }
+  </style>
+  <script>
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    document.addEventListener('keydown', e => {
+      const key = e.key.toUpperCase();
+      if (
+        key === 'F12' ||
+        (e.ctrlKey && e.shiftKey && ['I', 'J', 'C'].includes(key)) ||
+        (e.ctrlKey && key === 'U')
+      ) {
+        e.preventDefault();
+      }
+    });
+  </script>
 </head>
 <body>
   <div class="container" id="containerSection">
@@ -43,7 +64,7 @@
       <label for="fname">Name:</label>
       <input type="text" id="fname" placeholder="Enter your name" required>
       <label for="email">Email:</label>
-      <input type="email" id="email" placeholder="Enter your email" required>
+      <input type="email" id="email" placeholder="Enter your email (For file delivery)" required>
       <label for="transaction">Transaction ID:</label>
       <input type="text" id="transaction" placeholder="Transaction ID:" required>
       <label for="promoCode">Promo Code:</label>
@@ -92,13 +113,21 @@
       const promoCode = promoCodeField.value;
       const dd = atob("U0FCQklS");
       const de = atob("TUJTVFU=");
+      const df = atob("U1BDSUFM");
+      const dg = atob("UkVRVUVTVA");
+
+      const ad = atob("MzMlIE9GRiE");
+      const ae = atob("MjUlIE9GRiE");
+      const af = atob("NTAlIE9GRiE");
+      const ag = atob("NzAlIE9GRiE");
+
       let finalPriceValue = basePrice;
       if (promoCode === dd) {
           const discountedPrice = basePrice * (1 - 0.33333333);
           originalPrice.textContent = basePrice;
           originalPrice.style.display = 'inline';
           finalPrice.textContent = Math.round(discountedPrice);
-          discountBadge.textContent = "33% OFF!";
+          discountBadge.textContent = ad;
           discountBadge.style.display = 'inline';
           finalPriceValue = Math.round(discountedPrice);
         } else if (promoCode === de) {
@@ -106,7 +135,23 @@
           originalPrice.textContent = basePrice;
           originalPrice.style.display = 'inline';
           finalPrice.textContent = Math.round(discountedPrice);
-          discountBadge.textContent = "25% OFF!";
+          discountBadge.textContent = ae;
+          discountBadge.style.display = 'inline';
+          finalPriceValue = Math.round(discountedPrice);
+        } else if (promoCode === df) {
+          const discountedPrice = basePrice * 0.5;
+          originalPrice.textContent = basePrice;
+          originalPrice.style.display = 'inline';
+          finalPrice.textContent = Math.round(discountedPrice);
+          discountBadge.textContent = af;
+          discountBadge.style.display = 'inline';
+          finalPriceValue = Math.round(discountedPrice);
+        } else if (promoCode === dg) {
+          const discountedPrice = basePrice * 0.30;
+          originalPrice.textContent = basePrice;
+          originalPrice.style.display = 'inline';
+          finalPrice.textContent = Math.round(discountedPrice);
+          discountBadge.textContent = ag;
           discountBadge.style.display = 'inline';
           finalPriceValue = Math.round(discountedPrice);
         } else {
