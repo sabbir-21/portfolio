@@ -47,28 +47,25 @@
         <option value="1000">1000ns</option>
       </select>
 <div class="checkbox-wrapper-2">
+      
       <label class="check-box"><input type="checkbox" id="mmgbsaCheckbox"> Calculate MMGBSA (+400৳/complex)</label>
-      <label><input type="checkbox" id="dftCheckbox"> Calculate DFT (+1000৳/complex)</label></div>
+      <label><input type="checkbox" id="dftCheckbox"> Calculate DFT (+1000৳/complex)</label>
+      <label><input type="checkbox" id="pcaCheckbox"> Calculate PCA (+500৳/complex)</label>
+      <label><input type="checkbox" id="dccmCheckbox"> Calculate DCCM (+500৳/complex)</label>
+    </div>
 
       <h2>Total Price: <span id="originalPrice" style="text-decoration: line-through; display: none;"></span> <span id="finalPrice">1500</span> Taka <span id="discountBadge" style="display: none; background-color: #ffd700; padding: 5px; border-radius: 5px; margin-left: 10px;"></span></h2> <!--33% OFF!-->
       <h3>Estimated Time: <span id="daysDisplay">0</span> Day(s)</h3>
-
-      <button class="orderButtonStyle" type="button" id="payButton">Pay Now</button>
-      <!-- Overlay and Popup for QR Code -->
-      <div id="overlay" class="overlay"></div>
-      <div id="popup" class="popup">
-          <img src="qr-350.png" alt="QR Code" id="qrCodeImage" width="350" height="350" /><br>
-          <span style="justify-content: center; display: flex;">01997236316</span>
-      </div>
 
       <label for="fname">Name:</label>
       <input type="text" id="fname" placeholder="Enter your name" required>
       <label for="email">Email:</label>
       <input type="email" id="email" placeholder="Enter your email (For file delivery)" required>
-      <label for="transaction">Transaction ID:</label>
-      <input type="text" id="transaction" placeholder="Transaction ID:" required>
       <label for="promoCode">Promo Code:</label>
       <input type="text" id="promoCode" placeholder="Promo code (Optional)">
+      <label for="transaction">Payment Transaction ID:</label>
+      <input type="text" id="transaction" placeholder="Transaction ID:" required>
+      
 
       <button class="orderButtonStyle" type="button" id="orderButton">Order Now</button>
     </form>
@@ -80,6 +77,8 @@
     const simulationTime = document.getElementById('simulationTime');
     const mmgbsaCheckbox = document.getElementById('mmgbsaCheckbox');
     const dftCheckbox = document.getElementById('dftCheckbox');
+    const pcaCheckbox = document.getElementById('pcaCheckbox');
+    const dccmCheckbox = document.getElementById('dccmCheckbox');
     const originalPrice = document.getElementById('originalPrice');
     const finalPrice = document.getElementById('finalPrice');
     const discountBadge = document.getElementById('discountBadge');
@@ -95,6 +94,8 @@
     simulationTime.addEventListener('change', updatePrice);
     mmgbsaCheckbox.addEventListener('change', updatePrice);
     dftCheckbox.addEventListener('change', updatePrice);
+    pcaCheckbox.addEventListener('change', updatePrice);
+    dccmCheckbox.addEventListener('change', updatePrice);
     promoCodeField.addEventListener('input', updatePrice);
 
     function updatePrice() {
@@ -108,6 +109,12 @@
       
       if (dftCheckbox.checked) {
         basePrice += numComplexes * 1000;
+      }
+      if (pcaCheckbox.checked) {
+        basePrice += numComplexes * 500;
+      }
+      if (dccmCheckbox.checked) {
+        basePrice += numComplexes * 500;
       }
 
       const promoCode = promoCodeField.value;
@@ -176,6 +183,8 @@
       const nsValue = simulationTime.value;
       const mmgbsa = mmgbsaCheckbox.checked ? "Yes" : "No";
       const dft = dftCheckbox.checked ? "Yes" : "No";
+      const pca = pcaCheckbox.checked ? "Yes" : "No";
+      const dccm = dccmCheckbox.checked ? "Yes" : "No";
       const currentDate = new Date();
       const invoiceNumber = currentDate.toISOString().replace(/[-:T.]/g, '').slice(0, 14);
       const formattedDate = currentDate.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
@@ -194,6 +203,8 @@
         formData.append('entry.2026139812', nsValue);
         formData.append('entry.1734846573', mmgbsa);
         formData.append('entry.101306927', dft);
+        formData.append('entry.1923996397', pca);
+        formData.append('entry.2130868567', dccm);
 
         fetch(gForm, {
           method: 'POST',
@@ -210,6 +221,8 @@
               nsValue,
               mmgbsa,
               dft,
+              pca,
+              dccm,
               invoiceNumber,
               formattedDate,
             });
@@ -251,7 +264,7 @@
 								<td>
 									Bioinformatics Lab, Inc.<br />
 									RTX 4080<br />
-									Schrodinger Suits, CA
+									Schrodinger Suits
 								</td>
 
 								<td>
@@ -305,10 +318,20 @@
 
 					<td>${orderInfo.mmgbsa}</td>
 				</tr>
-				<tr class="item last">
+				<tr class="item">
 					<td>DFT:</td>
 
 					<td>${orderInfo.dft}</td>
+				</tr>
+				<tr class="item">
+					<td>PCA:</td>
+
+					<td>${orderInfo.pca}</td>
+				</tr>
+				<tr class="item last">
+					<td>DCCM:</td>
+
+					<td>${orderInfo.dccm}</td>
 				</tr>
 				
 				<tr class="total">
@@ -329,7 +352,7 @@
       html2canvas(containerSection).then((canvas) => {
         console.log('Canvas generated');
         const link = document.createElement('a');
-        link.download = 'invoice.png';
+        link.download = `invoice_${orderInfo.invoiceNumber}.png`;
         link.href = canvas.toDataURL('image/png');
         link.click();
         console.log('Download initiated');
@@ -343,19 +366,6 @@
     // Initial update to set correct values on page load
     updatePrice();
 
-    const openPopupBtn = document.getElementById('payButton');
-    const popup = document.getElementById('popup');
-    const overlay = document.getElementById('overlay');
-
-    openPopupBtn.addEventListener('click', function() {
-      popup.style.display = 'block';
-      overlay.style.display = 'block';
-    });
-
-    overlay.addEventListener('click', function() {
-      popup.style.display = 'none';
-      overlay.style.display = 'none';
-    });
   </script>
 </body>
 </html>

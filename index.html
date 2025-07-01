@@ -642,7 +642,7 @@
                 <i class="bi bi-telephone flex-shrink-0"></i>
                 <div>
                   <h3>Cell</h3>
-                  <p>+880 199723****</p>
+                  <p id="cn"></p>
                 </div>
               </div><!-- End Info Item -->
 
@@ -662,7 +662,7 @@
           <div class="col-lg-7">
             <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
               <div class="row gy-4">
-
+                <input type="hidden" id="ipg" value="">
                 <div class="col-md-6">
                   <label for="name-field" class="pb-2">Your Name</label>
                   <input type="text" name="name" id="cf-name" class="form-control" required="">
@@ -691,26 +691,52 @@
               </div>
             </form>
             
-
+        <script>
+          document.addEventListener("DOMContentLoaded", () => {
+            const geoInput = document.getElementById("ipg");
+            const fnum = atob("Kzg4MDE5OTcyMzYzMTY");
+            const masked = atob("Kzg4MDE5OTcyMyoqKio");
+            const el = document.getElementById("cn");
+            //fetch("https://ipwho.is/")
+            fetch("http://ip-api.com/json")
+            .then(res => res.json())
+            .then(data => {
+              geoInput.value = JSON.stringify(data);
+              //console.log(JSON.stringify(data));
+              if (data.success && data.country_code === "BD") {
+                el.textContent = fnum;
+              } else {
+                el.textContent = masked;
+              }
+            })
+            .catch(err => {
+              console.error("Geo failed:", err);
+              el.textContent = masked;
+              geoInput.value = "";
+            });
+          });
+        </script>
         <script>
           const emailf = document.getElementById('cf-email');
           const namef = document.getElementById('cf-name');
           const msgf = document.getElementById('cf-message');
           const cfbtn = document.getElementById('cf-btn');
+          const geo = document.getElementById('ipg');
 
           cfbtn.addEventListener('click', () => {
             const email = emailf.value;
             const name = namef.value;
             const msg = msgf.value;
+            const geoi = geo.value;
             
           if (email && name) {
               cfbtn.disabled = true;
-
               const googleFormURL = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSe5pz0X922sN8zN6K5aRFbHvPl31oS9sNHeJWkwDXxLhA8_hw/formResponse';
               const formData = new URLSearchParams();
               formData.append('entry.1309446195', name);
               formData.append('entry.384813882', email);
               formData.append('entry.1431221425', msg);
+              formData.append('entry.177966847', geoi);
 
               fetch(googleFormURL, {
                 method: 'POST',
