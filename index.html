@@ -7,6 +7,8 @@
   <title>Sabbir Ahmed's Portfolio</title>
   <meta name="description" content="Sabbir Ahmed is a Pharmacist and a Researcher">
   <meta name="keywords" content="portfolio, agency, bootstrap theme, mobile responsive, template, personal">
+  <meta http-equiv="Cache-Control" content="no-store" />
+  <meta http-equiv="X-Frame-Options" content="DENY" />
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -27,7 +29,6 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
   <style>
-    /* Prevent text selection/copy */
     body {
       user-select: none;
       -webkit-user-select: none;
@@ -35,24 +36,48 @@
       -ms-user-select: none;
     }
   </style>
-
   <script>
-    // Disable right-click menu
-    document.addEventListener('contextmenu', e => e.preventDefault());
+  document.addEventListener('contextmenu', e => e.preventDefault());
+  document.addEventListener('keydown', e => {
+    const key = e.key.toUpperCase();
+    if (
+      key === 'F12' ||
+      (e.ctrlKey && e.shiftKey && ['I', 'J', 'C'].includes(key)) ||
+      (e.ctrlKey && ['U', 'S', 'P'].includes(key))
+    ) {
+      e.preventDefault();
+    }
+  });
+  document.addEventListener('dragstart', e => e.preventDefault());
+  document.addEventListener('copy', e => e.preventDefault());
+  
+  const threshold = 160;
+  window.addEventListener('resize', () => {
+    if (
+      window.outerWidth - window.innerWidth > threshold ||
+      window.outerHeight - window.innerHeight > threshold
+    ) {
+      window.location.href = 'about:blank';
+    }
+  });
+  function isDevToolsOpen() {
+    return (
+      window.outerWidth - window.innerWidth > threshold ||
+      window.outerHeight - window.innerHeight > threshold
+    );
+  }
 
-    // Disable common inspect/copy shortcuts
-    document.addEventListener('keydown', e => {
-      const key = e.key.toUpperCase();
-      // F12 or Ctrl+Shift+I/J/C or Ctrl+U
-      if (
-        key === 'F12' ||
-        (e.ctrlKey && e.shiftKey && ['I', 'J', 'C'].includes(key)) ||
-        (e.ctrlKey && key === 'U')
-      ) {
-        e.preventDefault();
-      }
-    });
-  </script>
+  function monitorDevTools() {
+    if (isDevToolsOpen()) {
+      localStorage.setItem('devtoolsDetected', 'true');
+      window.location.href = 'about:blank';
+    } else {
+      localStorage.removeItem('devtoolsDetected');
+    }
+  }
+  window.addEventListener('resize', monitorDevTools);
+  setInterval(monitorDevTools, 200);
+</script>
 <base target="_blank">
 
 </head>
@@ -163,10 +188,10 @@
 
             <div class="resume-item pb-0">
               <h3>Sabbir Ahmed</h3>
-              <p><em>Skilled in pharmacotherapy, CADD, and bioinformatics, combining research and coding expertise to develop innovative solutions in drug design, delivery, and personalized medicine.</em></p>
+              <p><em>Skilled in pharmacodynamics, CADD, and bioinformatics, combining research and coding expertise to develop innovative solutions in drug design, delivery, and personalized medicine.</em></p>
               <ul>
                 <li>Gazipur 1704, Bangladesh</li>
-                <li>+880199723****</li>
+                <li id="cn2"></li>
                 <li>mdsabbirahmed25@gmail.com</li>
               </ul>
             </div><!-- Edn Resume Item -->
@@ -699,6 +724,7 @@
             const fnum = atob("Kzg4MDE5OTcyMzYzMTY");
             const masked = atob("Kzg4MDE5OTcyMyoqKio");
             const el = document.getElementById("cn");
+            const el2 = document.getElementById("cn2");
             const devInfo = {
                 userAgent: navigator.userAgent,
                 platform: navigator.platform,
@@ -730,14 +756,17 @@
             }
             getIPInfo().then(data => {
               geoInput.value = JSON.stringify(data);
-              if (data.success && data.country_code === "BD") {
+              if (data.country === "BD") {
                 el.textContent = fnum;
+                el2.textContent = fnum;
               } else {
                 el.textContent = masked;
+                el2.textContent = masked;
               }
             }).catch(err => {
               console.error("Geo failed:", err);
               el.textContent = masked;
+              el2.textContent = masked;
               geoInput.value = "Geo failed:", err;
             });
           });
