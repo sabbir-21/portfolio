@@ -145,16 +145,26 @@
         <p>A <span class="typed" data-typed-items="Researcher, Pharmacist, Consultant, Programmer"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
       </div>
       <script>
-        const heroImages = document.querySelectorAll('#hero img');
-        let currentHeroIndex = 0;
-        heroImages.forEach((img, i) => {
-          if (i !== 0) img.style.display = 'none';
-        });
-        setInterval(() => {
-          heroImages[currentHeroIndex].style.display = 'none';
-          currentHeroIndex = (currentHeroIndex + 1) % heroImages.length;
-          heroImages[currentHeroIndex].style.display = '';
-        }, 4550);
+          const heroImages = document.querySelectorAll('#hero img');
+          let currentHeroIndex = 0;
+
+          heroImages.forEach((img, i) => {
+            if (i !== 0) img.style.display = 'none';
+          });
+
+          function cycleImages() {
+            let delay = currentHeroIndex === 0 ? 6000 : 4550;
+
+            setTimeout(() => {
+              heroImages[currentHeroIndex].style.display = 'none';
+              currentHeroIndex = (currentHeroIndex + 1) % heroImages.length;
+              heroImages[currentHeroIndex].style.display = '';
+
+              cycleImages(); // call again recursively
+            }, delay);
+          }
+
+          cycleImages();
       </script>
 
     </section><!-- /Hero Section -->
