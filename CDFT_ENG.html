@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C-DFT Reactivity Analysis - HOMO/LUMO Calculator</title>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+        });
+    </script>
+    <style>
+        :root {
+            /* Color Palette */
+            --color-blue: #007bff;
+            --color-yellow: #ffc107;
+            --color-green: #28a745;
+            --color-dark-blue: #0056b3;
+            --color-light-gray: #f8f9fa;
+            --color-white: #ffffff;
+            --color-text: #343a40;
+            --color-black: #000000;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 10px; /* Less padding on mobile devices */
+            background: linear-gradient(135deg, var(--color-light-gray) 0%, var(--color-white) 100%);
+            color: var(--color-text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            background: var(--color-white);
+            padding: 20px; /* Less padding on mobile devices */
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--color-dark-blue);
+            text-align: center;
+            margin-bottom: 25px;
+            border-bottom: 3px solid var(--color-yellow);
+            padding-bottom: 10px;
+        }
+
+        .section-title {
+            color: var(--color-green);
+            border-left: 5px solid var(--color-blue);
+            padding-left: 10px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .calculator-area {
+            display: flex;
+            flex-wrap: wrap; /* Boxes stack on mobile */
+            gap: 20px;
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid var(--color-blue);
+            border-radius: 10px;
+            background-color: #f0f8ff;
+        }
+
+        .input-group, .output-group {
+            flex: 1;
+            min-width: 100%; /* Full width on mobile devices */
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .input-group {
+            background-color: var(--color-white);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: var(--color-dark-blue);
+        }
+
+        input[type="number"], select {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 2px solid var(--color-yellow);
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        button {
+            background-color: var(--color-green);
+            color: var(--color-white);
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background-color 0.3s, transform 0.1s;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: var(--color-dark-blue);
+            transform: translateY(-2px);
+        }
+
+        .output-group {
+            background-color: var(--color-blue);
+            color: var(--color-white);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .result-item {
+            margin-bottom: 10px;
+            padding: 8px;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.5);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .result-item:last-child {
+            border-bottom: none;
+        }
+
+        .result-value {
+            font-weight: bold;
+            color: var(--color-yellow);
+        }
+
+        .info-area {
+            display: flex;
+            flex-wrap: wrap; /* Boxes stack on mobile */
+            gap: 20px;
+        }
+
+        .descriptions, .formulas {
+            flex: 1;
+            min-width: 100%; /* Full width on mobile devices */
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .descriptions {
+            background-color: #e6f7ff;
+        }
+
+        .formulas {
+            background-color: #f0fff4;
+            border: 1px solid var(--color-green);
+        }
+        
+        .formula-list p {
+            margin-bottom: 15px;
+            padding: 5px;
+            border-left: 3px solid var(--color-yellow);
+        }
+
+        .math-formula {
+            display: block;
+            margin: 10px 0;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: var(--color-dark-blue);
+            overflow-x: auto;
+            text-align: center;
+        }
+
+        .footer {
+            max-width: 600px;
+            margin: 10px auto;
+            text-align: center;
+            padding: 15px 20px;
+            font-size: 1em;
+            color: var(--color-black);
+            border-top: 3px solid var(--color-green);
+            background-color: var(--color-yellow);
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer strong {
+            color: var(--color-black);
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+        
+        /* DESKTOP SETTINGS (above 768px) */
+        @media (min-width: 768px) {
+            /* Align flexbox items side by side */
+            .input-group, .output-group {
+                min-width: 300px; /* Original desktop min width */
+            }
+
+            .descriptions, .formulas {
+                min-width: 45%; /* Original desktop min width */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>C-DFT Reactivity Descriptors Calculator Tool</h1>
+    <p style="text-align: center; color: var(--color-dark-blue);">
+        Tool for Calculating Reactivity Descriptors from HOMO and LUMO Energy Values
+    </p>
+
+    <div class="calculator-area">
+        <div class="input-group">
+            <h2 class="section-title">Energy Values</h2>
+            <label for="homo">$E_{\text{HOMO}}$ :</label>
+            <input type="tel" id="homo" placeholder="E.g.: -5.0" step="any" required>
+
+            <label for="lumo">$E_{\text{LUMO}}$ :</label>
+            <input type="tel" id="lumo" placeholder="E.g.: -2.0" step="any" required>
+    
+            <label for="unit">Energy Unit:</label>
+            <select id="unit">
+                <option value="eV">Electronvolt (eV)</option>
+                <option value="Hartree">Hartree</option>
+            </select>
+
+            <button onclick="hesapla()">Calculate Reactivity Properties</button>
+        </div>
+
+        <div class="output-group">
+            <h2 class="section-title" style="color: var(--color-yellow);">Calculated Properties (eV)</h2>
+            <div id="sonuclar">
+                <p style="text-align: center; margin-top: 50px;">Please enter the $E_{\text{HOMO}}$ and $E_{\text{LUMO}}$ values and click the "Calculate" button.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="info-area">
+        <div class="descriptions">
+            <h2 class="section-title">Reactivity Properties and Their Meanings</h2>
+            
+            <p><strong>Ionization Energy ($I$):</strong> The energy required to remove an electron from the molecule. The lower the value, the easier the molecule gives up an electron (nucleophilicity).</p>
+            
+            <p><strong>Electron Affinity ($A$):</strong> The tendency of the molecule to accept an electron. The higher the value, the easier the molecule accepts an electron (electrophilicity).</p>
+
+            <p><strong>Chemical Potential ($\mu$):</strong> A measure of the propensity for electron transfer. Its negativity indicates a tendency to gain electrons.</p>
+            
+            <p><strong>Electronegativity ($\chi$):</strong> A measure of the power of an atom/molecule to attract electrons to itself. It is equal to the negative of the chemical potential ($\chi = -\mu$).</p>
+            
+            <p><strong>Chemical Hardness ($\eta$):</strong> A measure of the molecule's resistance to a change in the number of electrons. High hardness means low reactivity (high stability).</p>
+            
+            <p><strong>Chemical Softness ($S$):</strong> The inverse of hardness ($S = 1/\eta$). High softness means high reactivity.</p>
+            
+            <p><strong>Electrophilicity Index ($\omega_1$):</strong> Measures the power and stability of a molecule to accept electrons (electrophilic power). High $\omega_1$ indicates the molecule is a strong electrophile.</p>
+
+        </div>
+
+        <div class="formulas">
+            <h2 class="section-title">Formulas Used</h2>
+            <div class="formula-list">
+                <p><strong>Koopmans' Approximation:</strong><br>
+                Ionization Energy ($I$): <span class="math-formula">$$I \approx -E_{\text{HOMO}}$$</span>
+                Electron Affinity ($A$): <span class="math-formula">$$A \approx -E_{\text{LUMO}}$$</span></p>
+
+                <p><strong>Chemical Potential ($\mu$) / Electronegativity ($\chi$):</strong><br>
+                <span class="math-formula">$$\mu = -\chi = \frac{E_{\text{HOMO}} + E_{\text{LUMO}}}{2}$$</span></p>
+
+                <p><strong>Chemical Hardness ($\eta$):</strong><br>
+                <span class="math-formula">$$\eta = \frac{I - A}{2} = \frac{E_{\text{LUMO}} - E_{\text{HOMO}}}{2}$$</span></p>
+                
+                <p><strong>Chemical Softness ($S$):</strong><br>
+                <span class="math-formula">$$S = \frac{1}{\eta}$$</span></p>
+
+                <p><strong>Electrophilicity Index ($\omega_1$):</strong><br>
+                <span class="math-formula">$$\omega_1 = \frac{\mu^2}{2\eta}$$</span></p>
+                
+            </div>
+        </div>
+    </div>
+
+</div> 
+
+<footer class="footer">
+    <strong>Made by In Silico Design - Emre Can Buluz.</strong>
+</footer>
+
+<script>
+    // Hartree to eV conversion constant (approximate)
+    const HARTREE_TO_EV = 27.2114;
+
+    function hesapla() {
+        const homoInput = document.getElementById('homo');
+        const lumoInput = document.getElementById('lumo');
+        const unitSelect = document.getElementById('unit');
+        const sonuclarDiv = document.getElementById('sonuclar');
+
+        const homoValue = parseFloat(homoInput.value);
+        const lumoValue = parseFloat(lumoInput.value);
+        const unit = unitSelect.value;
+
+        if (isNaN(homoValue) || isNaN(lumoValue)) {
+            sonuclarDiv.innerHTML = '<p style="text-align: center; color: var(--color-yellow);">Please enter valid numerical HOMO and LUMO values.</p>';
+            return;
+        }
+
+        let E_HOMO = homoValue;
+        let E_LUMO = lumoValue;
+
+        // Unit Conversion: Convert to eV if Hartree
+        if (unit === 'Hartree') {
+            E_HOMO = homoValue * HARTREE_TO_EV;
+            E_LUMO = lumoValue * HARTREE_TO_EV;
+        }
+        
+        // E_LUMO < E_HOMO check
+        if (E_LUMO <= E_HOMO) {
+             sonuclarDiv.innerHTML = '<p style="text-align: center; color: var(--color-yellow);">LUMO energy must be greater than HOMO energy. Please check the values.</p>';
+             return;
+        }
+        
+        // **C-DFT Calculations (in eV)**
+        const I = -E_HOMO;
+        const A = -E_LUMO;
+        const mu = (E_HOMO + E_LUMO) / 2;
+        const chi = -mu;
+        const eta = (E_LUMO - E_HOMO) / 2;
+        const S = 1 / (eta);
+        const omega1 = (mu * mu) / (2 * eta);
+        
+        // Since the second electrophilicity index is removed, only a single omega1 is shown.
+
+        // Writing results to HTML (most compact display with MathJax)
+        const resultsHTML = `
+            <div class="result-item">Ionization Energy $\\left(I\\right)$: <span class="result-value">${I.toFixed(4)} eV</span></div>
+            <div class="result-item">Electron Affinity $\\left(A\\right)$: <span class="result-value">${A.toFixed(4)} eV</span></div>
+            <div class="result-item">Chemical Potential $\\left(\\mu\\right)$: <span class="result-value">${mu.toFixed(4)} eV</span></div>
+            <div class="result-item">Electronegativity $\\left(\\chi\\right)$: <span class="result-value">${chi.toFixed(4)} eV</span></div>
+            <div class="result-item">Chemical Hardness $\\left(\\eta\\right)$: <span class="result-value">${eta.toFixed(4)} eV</span></div>
+            <div class="result-item">Chemical Softness $\\left(S\\right)$: <span class="result-value">${S.toFixed(4)} $\\text{eV}^{-1}$</span></div>
+            <div class="result-item">Electrophilicity Index $\\left(\\omega\\right)$: <span class="result-value">${omega1.toFixed(4)} eV</span></div>
+            <div class="result-item" style="border-bottom: none;">HOMO-LUMO Gap $\\left(\\Delta E\\right)$: <span class="result-value">${((E_LUMO - E_HOMO)).toFixed(4)} eV</span></div>
+        `;
+        
+        sonuclarDiv.innerHTML = resultsHTML;
+
+        // Notify MathJax that 'sonuclarDiv' content has changed and needs to be re-rendered.
+        MathJax.Hub.Queue(["Typeset", MathJax.Hub, "sonuclar"]);
+    }
+</script>
+
+</body>
+</html>
