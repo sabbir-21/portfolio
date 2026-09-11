@@ -562,6 +562,17 @@ section,
   z-index: 1;
 }
 
+@media (max-width: 768px) {
+  .hero {
+    min-height: 50vh;
+  }
+
+  .hero img {
+    object-fit: cover;
+    object-position: center center;
+  }
+}
+
 .hero:before {
   content: "";
   background: color-mix(in srgb, var(--background-color), transparent 70%);

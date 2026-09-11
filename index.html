@@ -134,38 +134,72 @@
     <!-- Hero Section -->
 
     <section id="hero" class="hero section dark-background">
-
-      <img src="assets/img/microbiologylab.jpg" alt="Microbiologylab">
       <img src="assets/img/rotary2.jpg" alt="Rotary Evaporator">
+      <img src="assets/img/microbiologylab.jpg" alt="Microbiologylab">
+      <img src="assets/img/micelab.jpg" alt="MBSTU">
       <img src="assets/img/rotary.jpg" alt="Rotary Evaporator">
+      <img src="assets/img/elisa.jpg" alt="ELISA">
       <img src="assets/img/sa_center.jpg" alt="MBSTU">
       
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <h2>Sabbir Ahmed</h2>
-        <p>A <span class="typed" data-typed-items="Researcher, Pharmacist, Consultant, Programmer"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+        <p>A <span class="typed" data-typed-items="Researcher, Pharmacist, Consultant, Programmer"></span></p>
       </div>
       <script>
-          const heroImages = document.querySelectorAll('#hero img');
-          let currentHeroIndex = 0;
+document.addEventListener("DOMContentLoaded", function () {
 
-          heroImages.forEach((img, i) => {
-            if (i !== 0) img.style.display = 'none';
-          });
+    const heroImages = document.querySelectorAll("#hero img");
+    const typedElement = document.querySelector("#hero .typed");
 
-          function cycleImages() {
-            let delay = currentHeroIndex === 0 ? 6000 : 4550;
+    let currentImageIndex = 0;
+    let lastText = "";
 
-            setTimeout(() => {
-              heroImages[currentHeroIndex].style.display = 'none';
-              currentHeroIndex = (currentHeroIndex + 1) % heroImages.length;
-              heroImages[currentHeroIndex].style.display = '';
+    const words = [
+        "Researcher",
+        "Pharmacist",
+        "Consultant",
+        "Programmer"
+    ];
 
-              cycleImages(); // call again recursively
-            }, delay);
-          }
+    // Show first image
+    heroImages.forEach((img, i) => {
+        img.style.display = i === 0 ? "block" : "none";
+    });
 
-          cycleImages();
-      </script>
+    const observer = new MutationObserver(function () {
+
+        const currentText = typedElement.textContent.trim();
+
+        // Detect when typing starts a NEW word
+        if (currentText.length === 1 && lastText.length === 0) {
+
+            currentImageIndex =
+                (currentImageIndex + 1) % heroImages.length;
+
+            heroImages.forEach((img, i) => {
+                img.style.display =
+                    i === currentImageIndex ? "block" : "none";
+            });
+        }
+
+        // Detect when deleting starts
+        if (currentText.length === 0) {
+            lastText = "";
+            return;
+        }
+
+        lastText = currentText;
+
+    });
+
+    observer.observe(typedElement, {
+        childList: true,
+        characterData: true,
+        subtree: true
+    });
+
+});
+</script>
 
     </section><!-- /Hero Section -->
 
