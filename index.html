@@ -1074,10 +1074,10 @@ document.getElementById('openCV').onclick = async () => {
                     const baseViewport = page.getViewport({ scale: 1 });
 
                     const maxWidth = Math.min(viewer.clientWidth, 900);
-                    const scale = Math.min(maxWidth / baseViewport.width, 1.35);
+                    const scale = maxWidth / baseViewport.width;
 
                     const viewport = page.getViewport({ scale });
-                    const outputScale = Math.min(window.devicePixelRatio || 1, 1.5);
+                    const outputScale = Math.max(window.devicePixelRatio || 1, 2);
 
                     canvas.width = Math.floor(viewport.width * outputScale);
                     canvas.height = Math.floor(viewport.height * outputScale);
